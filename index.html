@@ -1,89 +1,238 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="keywords" content="上网导航,网址之家,网址大全,网址导航,手机网址,平板网址,百度,搜狗,好搜,谷歌,必应,腾讯,新浪,搜狐,凤凰,环球,新华,人民,央视,微博,微信,优酷,土豆,爱奇艺,时光,虾米,天涯,豆瓣,知乎,人人,贴吧,和讯,雪球,汽车之家,手机之家,太平洋,快科技,3DM,斗鱼,58,17173,电玩巴士,4399,游戏狗,携程,穷游,蚂蜂窝,点评,无忌,39健康,摇篮,爱美,佳缘,智联,起点,西陆,虎扑,果壳,澎湃,netcn导航">
-	<meta name="description" content="最简洁的网址导航。绿色、免费、简单、直链、无弹窗的网站大全。便捷上网，简单高效。">
-	<title>NetCN导航_最简洁上网导航_简单网址主页</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta name="msvalidate.01" content="E1E1F6FA255BD695C81B5C32FB2DC80E" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="简洁导航 - 纯净无广告上网首页，收录精选中文和英文网站，分类清晰，一键直达。搜索、视频、社交、电商、AI、外卖、资讯、科技、数码等常用网站导航。">
+    <meta name="keywords" content="网址导航,上网导航,简洁导航,网站导航,常用网站,netcn,上网首页">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://netcn.org/">
+    <meta property="og:title" content="简洁导航 - 纯净无广告上网首页">
+    <meta property="og:description" content="收录精选中文和英文网站，分类清晰，一键直达。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netcn.org/">
+    <meta property="og:site_name" content="简洁导航">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="简洁导航 - 纯净无广告上网首页">
+    <meta name="twitter:description" content="收录精选中文和英文网站，分类清晰，一键直达。">
+    <title>简洁导航 - 纯净无广告上网首页 | netcn.org</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="llms-txt" content="https://netcn.org/llms.txt">
+    <meta name="msvalidate.01" content="E1E1F6FA255BD695C81B5C32FB2DC80E" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "简洁导航",
+      "alternateName": "Jianjie Nav",
+      "url": "https://netcn.org/",
+      "description": "纯净无广告上网首页，收录精选中文和英文网站，分类清晰，一键直达。",
+      "inLanguage": ["zh-CN", "en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://netcn.org/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <style>
+    .categories-grid{display:flex;flex-wrap:wrap;column-gap:5px;row-gap:3px;padding:0}
+    .category-section{display:contents}
+    .cat-tag{display:inline-flex;align-items:center;gap:2px;padding:1px 6px;border-radius:3px;font-size:16px;color:#fff;cursor:pointer;user-select:none;white-space:nowrap;flex-shrink:0;font-weight:600;line-height:1.5}
+    .category-section a{cursor:grab;display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:3px;font-size:16px;color:var(--color-text);text-decoration:none;background:var(--color-bg-secondary);border:1px solid var(--color-border);transition:all .12s;white-space:nowrap;line-height:1.5}
+    .category-section a:hover{background:var(--color-accent);color:#fff;border-color:var(--color-accent)}
+    .category-section a:active{cursor:grabbing}
+    .category-section a.dragging{opacity:.4}
+    .category-section a.search-dim{opacity:.2;pointer-events:none}
+    .cat-tag.search-dim{opacity:.2;pointer-events:none}
+    .category-section a.search-match{background:var(--color-accent);color:#fff;border-color:var(--color-accent);box-shadow:0 0 12px var(--color-accent-bg);transform:scale(1.05);position:relative;z-index:1}
+    </style>
 </head>
 <body>
 <div class="container">
-	<header class="header">
-		<div class="logo"><b class="net">net</b><b class="cn">cn</b>.org</div>
-	</header>
+    <header class="header">
+        <a href="/" class="logo"><span class="logo-jj">简洁</span><span class="logo-dh">导航</span></a>
+        <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input type="text" id="searchInput" data-zh="搜索站点..." data-en="Search sites..." placeholder="搜索站点..." autocomplete="off">
+        </div>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch Language">EN</button>
+        <div class="header-fun">
+            <a href="fun.html" class="fun-btn" title="脑的体操">💡</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
+    </header>
 
-	<div class="main-content">
-		<div class="left-column">
-			<div class="link-row"><img src="favicon/baidu.png" alt=""><a href="https://www.baidu.com/">百度</a><img src="favicon/sogou.png" alt=""><a href="https://www.sogou.com/">搜狗</a><img src="favicon/so.png" alt=""><a href="https://www.so.com/">360搜</a><img src="favicon/google.png" alt=""><a href="https://www.google.cn">谷歌</a><img src="favicon/bing.png" alt=""><a href="https://cn.bing.com/">必应</a></div>
-			<div class="link-row"><img src="favicon/qq.png" alt=""><a href="https://www.qq.com/">腾讯</a><img src="favicon/sina.png" alt=""><a href="https://www.sina.com.cn/">新浪</a><img src="favicon/sohu.png" alt=""><a href="https://www.sohu.com/">搜狐</a><img src="favicon/163.png" alt=""><a href="https://www.163.com/">网易</a><img src="favicon/weibo.png" alt=""><a href="https://weibo.com/">微博</a></div>
-			<div class="link-row"><img src="favicon/xinhuanet.png" alt=""><a href="http://www.xinhuanet.com/">新华</a><img src="favicon/people.png" alt=""><a href="http://www.people.com.cn/">人民</a><img src="favicon/cntv.png" alt=""><a href="https://www.cntv.cn/">央视</a><img src="favicon/ifeng.png" alt=""><a href="https://www.ifeng.com/">凤凰</a><img src="favicon/huanqiu.png" alt=""><a href="https://www.huanqiu.com/">环球</a></div>
-			<div class="link-row"><img src="favicon/youku.png" alt=""><a href="https://www.youku.com/">优酷</a><img src="favicon/qqv.png" alt=""><a href="https://v.qq.com/">腾讯视</a><img src="favicon/iqiyi.png" alt=""><a href="https://www.iqiyi.com/">爱奇艺</a><img src="favicon/bili.png" alt=""><a href="https://www.bilibili.com/">哔哩</a><img src="favicon/douyin.png" alt=""><a href="https://www.douyin.com/">抖音</a></div>
-			<div class="link-row"><img src="favicon/xiaohongshu.png" alt=""><a href="https://www.xiaohongshu.com/explore">小红书</a><img src="favicon/douban.png" alt=""><a href="https://www.douban.com/">豆瓣</a><img src="favicon/zhihu.png" alt=""><a href="https://www.zhihu.com/">知乎</a><img src="favicon/cnblogs.png" alt=""><a href="https://www.cnblogs.com">博客园</a><img src="favicon/baidu.png" alt=""><a href="https://tieba.baidu.com/">贴吧</a></div>
-			<div class="link-row"><img src="favicon/hexun.png" alt=""><a href="https://www.hexun.com/">和讯</a><img src="favicon/xueqiu.png" alt=""><a href="https://xueqiu.com/">雪球</a><img src="favicon/autohome.png" alt=""><a href="https://www.autohome.com.cn/">汽车之家</a><img src="favicon/imobile.png" alt=""><a href="http://www.imobile.com.cn/">手机之家</a></div>
-			<div class="link-row"><img src="favicon/pconline.png" alt=""><a href="https://www.pconline.com.cn/">太平洋</a><img src="favicon/mydrivers.png" alt=""><a href="https://www.mydrivers.com/">快科技</a><img src="favicon/3dmgame.png" alt=""><a href="https://www.3dmgame.com/">3DM</a><img src="favicon/csdn.png" alt=""><a href="https://www.csdn.net/">CSDN</a><img src="favicon/58.png" alt=""><a href="https://58.com/">58</a></div>
-			<div class="link-row"><img src="favicon/17173.png" alt=""><a href="https://www.17173.com/">17173</a><img src="favicon/tgbus.png" alt=""><a href="https://www.tgbus.com/">电玩巴士</a><img src="favicon/4399.png" alt=""><a href="https://www.4399.com/">4399</a><img src="favicon/gamedog.png" alt=""><a href="http://www.gamedog.cn/">游戏狗</a></div>
-			<div class="link-row"><img src="favicon/ctrip.png" alt=""><a href="https://www.ctrip.com/">携程</a><img src="favicon/qyer.png" alt=""><a href="https://www.qyer.com/">穷游</a><img src="favicon/mafengwo.png" alt=""><a href="https://www.mafengwo.cn/">蚂蜂窝</a><img src="favicon/dianping.png" alt=""><a href="https://www.dianping.com/">点评</a><img src="favicon/xitek.png" alt=""><a href="https://www.xitek.com">无忌</a></div>
-			<div class="link-row"><img src="favicon/39.png" alt=""><a href="http://www.39.net/">39健康</a><img src="favicon/mama.png" alt=""><a href="https://www.mama.cn/">妈妈</a><img src="favicon/huaban.png" alt=""><a href="https://huaban.com/">花瓣</a><img src="favicon/jiayuan.png" alt=""><a href="https://www.jiayuan.com/">佳缘</a><img src="favicon/zhaopin.png" alt=""><a href="https://www.zhaopin.com/">智联</a></div>
-			<div class="link-row"><img src="favicon/qidian.png" alt=""><a href="https://www.qidian.com/">起点</a><img src="favicon/xilu.png" alt=""><a href="https://www.xilu.com/">西陆</a><img src="favicon/hupu.png" alt=""><a href="https://www.hupu.com/">虎扑</a><img src="favicon/guokr.png" alt=""><a href="https://www.guokr.com/">果壳</a><img src="favicon/thepaper.png" alt=""><a href="https://www.thepaper.cn/">澎湃</a></div>
-		</div>
-
-		<div class="right-column">
-			<div class="link-row">出行：<a href="http://www.weather.com.cn/static/html/weather.shtml">天气</a><a href="https://map.baidu.com/">地图</a><a href="https://www.8684.cn/">公交</a><a href="https://www.12306.cn">火车票</a><a href="https://ruhike.com">徒步</a><a href="https://paobu.org">跑步</a><a href="https://www.2bulu.com/">两步路</a></div>
-			<div class="link-row">生活：<a href="https://www.tvmao.com/">电视</a><a href="https://www.mtime.com/">电影</a><a href="https://tvcn.org/">影音</a><a href="https://www.damai.cn/">演出</a><a href="https://www.meishichina.com/">菜谱</a><a href="https://www.guahao.com/">挂号</a><a href="https://www.kuaidi100.com/">快递</a><a href="https://www.ip138.com/">查询</a></div>
-			<div class="link-row">财经：<a href="https://quote.eastmoney.com/">股票</a><a href="https://www.aastocks.com/">港股</a><a href="https://www.1234567.com.cn/">基金</a><a href="https://www.boc.cn/sourcedb/whpj/">汇率</a><a href="https://www.51invest.com/">投资</a><a href="https://www.ke.com/">贝壳</a><a href="https://www.zhcw.com/">彩票</a><a href="https://www.lottery.gov.cn/">体彩</a></div>
-			<div class="link-row">购物：<a href="https://www.taobao.com/">淘宝</a><a href="https://www.tmall.com/">天猫</a><a href="https://www.jd.com/">京东</a><a href="https://www.vip.com/">‌唯品</a><a href="https://www.suning.com/">苏宁</a><a href="https://www.dangdang.com/">当当</a><a href="https://www.xiaomiyoupin.com/">有品</a><a href="https://www.goofish.com/">闲鱼</a></div>
-			<div class="link-row">日常：<a href="https://www.smzdm.com/">值得买</a><a href="https://www.meituan.com/">美团</a><a href="https://www.bendibao.com/">本地宝</a><a href="https://www.alipay.com/">支付宝</a><a href="https://wecn.org/">小吃</a><a href="https://chapu.org/">喝茶</a><a href="https://hejiu.org/">喝酒</a></div>
-			<div class="link-row">学习：<a href="https://www.xuetangx.com/">学堂</a><a href="https://www.icourse163.org/">中大</a><a href="https://www.netcn.org/njjzw.html">脑筋急转弯</a><a href="https://www.netcn.org/zimi.html">字谜</a><a href="https://www.netcn.org/miyu.html">谜语</a><a href="https://shilu.org/">历史年表</a></div>
-			<div class="link-row">资料：<a href="https://www.youdao.com/">有道</a><a href="https://www.docin.com/">豆丁</a><a href="https://www.cnki.net/">知网</a><a href="https://www.wanfangdata.com.cn/">万方</a><a href="https://www.zdic.net/">汉典</a><a href="https://baike.baidu.com/">百科</a><a href="https://zh.wikipedia.org/">维基</a><a href="https://zgjz.org/">建筑</a></div>
-			<div class="link-row">银行：<a href="https://www.cmbchina.com/">招商</a><a href="https://www.boc.cn/">中行</a><a href="https://www.ccb.com/">建行</a><a href="https://www.icbc.com.cn/">工商</a><a href="https://www.abchina.com/">农业</a><a href="https://www.bankcomm.com/">交通</a><a href="https://www.cmbc.com.cn/">民生</a><a href="https://www.cib.com.cn/">兴业</a></div>
-			<div class="link-row">智能：<a href="https://specul.com/">推演</a><a href="https://www.deepseek.com/">DeepSeek</a><a href="https://yuanbao.tencent.com/">元宝</a><a href="https://chat.qwen.ai/">Qwen</a><a href="https://yiyan.baidu.com/">文心</a><a href="https://www.doubao.com/chat/">豆包</a><a href="https://www.kimi.com/">Kimi</a></div>
-			<div class="link-row">软件：<a href="https://consumer.huawei.com/cn/">华为</a><a href="https://www.apple.com/cn/">Apple</a><a href="https://www.mi.com/">小米</a><a href="https://store.steampowered.com/">Steam</a><a href="https://www.aliyun.com/">阿里云</a><a href="https://docs.qq.com/">文档</a><a href="https://github.com/">GitHub</a></div>
-			<div class="link-row">邮件：<a href="https://mail.163.com/">163</a><a href="https://www.126.com/">126</a><a href="https://mail.qq.com/">QQ</a><a href="https://mail.sina.com.cn/">新浪</a><a href="https://mail.sohu.com/">搜狐</a><a href="https://mail.live.com/">Hotmail</a><a href="https://mail.google.com/">Gmail</a></div>
-		</div>
-	</div>
-
-	<div class="category-row alt-bg">门户：<a href="https://www.qq.com/">腾讯</a><a href="https://www.sina.com.cn/">新浪</a><a href="https://www.sohu.com/">搜狐</a><a href="https://www.163.com/">网易</a><a href="https://www.china.com/">中华</a>-<a href="https://www.baidu.com/">百度</a><a href="https://www.sogou.com/">搜狗</a><a href="https://www.haosou.com/">好搜</a><a href="https://www.google.com.hk/">谷歌</a><a href="https://cn.bing.com/">Bing</a></div>
-	<div class="category-row">媒体：<a href="https://www.xinhuanet.com/">新华</a><a href="https://www.people.com.cn/">人民</a><a href="https://www.cntv.cn/">央视</a><a href="https://gmw.cn/">光明</a><a href="https://www.ifeng.com/">凤凰</a><a href="https://www.huanqiu.com/">环球</a><a href="https://www.chinanews.com/">中新网</a><a href="https://www.youth.cn/">中国青年</a><a href="https://www.21cn.com/">21CN</a></div>
-	<div class="category-row alt-bg">视频：<a href="https://www.youku.com/">优酷</a><a href="https://v.qq.com/">腾讯视</a><a href="https://www.iqiyi.com/">爱奇艺</a><a href="https://www.ixigua.com/">西瓜</a><a href="https://www.bilibili.com/">Bilibili</a><a href="https://www.acfun.cn/">Acfun</a><a href="https://www.56.com/">56</a><a href="https://www.pptv.com/">PPTV</a><a href="https://www.pps.tv/">PPS</a><a href="https://www.wasu.cn/">华数</a>-<a href="https://www.zhanqi.tv">战旗</a><a href="https://www.yy.com">YY</a><a href="https://www.6.cn">六间房</a><a href="https://www.douyu.com/">斗鱼</a></div>
-	<div class="category-row">社交：<a href="https://weibo.com/">微博</a><a href="https://weixin.qq.com/">微信</a><a href="https://tieba.baidu.com/">贴吧</a><a href="https://www.tianya.cn/">天涯</a><a href="https://www.douban.com/">豆瓣</a><a href="https://www.zhihu.com/">知乎</a><a href="https://www.renren.com/">人人</a><a href="https://www.kaixin001.com/">开心</a><a href="https://www.kdnet.net/">凯迪</a><a href="https://www.xici.net/">西祠胡同</a><a href="https://www.mop.com/">猫扑</a>-<a href="https://www.jiayuan.com/">世纪佳缘</a><a href="https://www.zhenai.com/">珍爱</a></div>
-	<div class="category-row alt-bg">购物：<a href="https://www.taobao.com/">淘宝</a><a href="https://www.tmall.com/">天猫</a><a href="https://www.jd.com/">京东</a><a href="https://www.amazon.cn/">亚马逊</a><a href="https://www.suning.com/">苏宁</a><a href="https://www.gome.com.cn/">国美</a><a href="https://www.dangdang.com/">当当</a><a href="https://www.yhd.com/">1号店</a>-<a href="https://www.meituan.com/">美团</a><a href="https://www.nuomi.com/">糯米</a><a href="https://www.lashou.com/">拉手</a>-<a href="https://www.smzdm.com/">值得买</a><a href="https://www.etao.com/">一淘</a><a href="https://www.fanli.com/">返利</a></div>
-	<div class="category-row">财经：<a href="https://www.hexun.com/">和讯</a><a href="https://www.eastmoney.com/">东方财富</a><a href="https://www.ce.cn/">中经</a><a href="https://www.jrj.com.cn/">金融界</a><a href="https://www.cnfol.com/">中金</a><a href="https://www.caijing.com.cn/">财经</a><a href="https://www.cs.com.cn/">中证</a><a href="https://www.p5w.net/">全景</a><a href="https://www.caixin.com/">财新</a>-<a href="https://www.howbuy.com/">好买</a><a href="https://www.1234567.com.cn/">天天</a><a href="https://www.10jqka.com.cn/">同花顺</a><a href="https://xueqiu.com/">雪球</a></div>
-	<div class="category-row alt-bg">科技：<a href="https://www.pconline.com.cn/">太平洋电脑</a><a href="https://www.zol.com.cn/">中关村在线</a><a href="https://www.pchome.net/">电脑之家</a><a href="https://www.pcpop.com/">泡泡</a><a href="https://www.yesky.com/">天极</a><a href="https://www.it168.com/">IT168</a><a href="https://www.mydrivers.com/">快科技</a><a href="https://www.guokr.com/">果壳</a></div>
-	<div class="category-row">网络：<a href="https://www.csdn.net/">CSDN</a><a href="https://www.chinaz.com/">站长之家</a><a href="https://www.enet.com.cn/">eNet</a><a href="https://www.aizhan.com/">爱站</a><a href="https://www.chinabyte.com/">比特网</a><a href="https://www.cnblogs.com/">博客园</a><a href="https://www.51cto.com/">51CTO</a><a href="https://www.admin5.com/">A5站长</a><a href="https://www.ccidnet.com/">赛迪</a><a href="https://www.ithome.com/">IT之家</a><a href="https://www.oschina.net/">开源中国</a></div>
-	<div class="category-row alt-bg">汽车：<a href="https://www.autohome.com.cn/">汽车之家</a><a href="https://www.bitauto.com/">易车</a><a href="https://www.xgo.com.cn/">汽车点评</a><a href="https://www.pcauto.com.cn/">太平洋汽车</a><a href="https://www.xcar.com.cn/">爱卡</a><a href="https://www.315che.com/">315che</a><a href="https://www.51auto.com/">51汽车</a></div>
-	<div class="category-row">房产：<a href="https://www.focus.cn/">焦点</a><a href="https://fang.com/">搜房</a>-<a href="https://www.to8to.com/">土巴兔</a><a href="https://www.jia.com/">齐家</a><a href="https://www.51hejia.com/">和家</a>-<a href="https://www.ikea.com/cn/zh/">宜家</a><a href="https://www.meilele.com/">美乐乐</a><a href="https://www.pchouse.com.cn/">太平洋家居</a><a href="https://www.ea3w.com/">万维家电</a></div>
-	<div class="category-row alt-bg">游戏：<a href="https://www.17173.com/">17173</a><a href="https://www.duowan.com/">多玩</a><a href="https://www.pcgames.com.cn/">太平洋游戏</a><a href="https://www.gamersky.com/">游民星空</a><a href="https://www.yxdown.com/">游迅</a><a href="https://www.178.com/">178</a><a href="https://www.52pk.com/">52pk</a><a href="https://www.3dmgame.com/">3DM</a><a href="https://www.ali213.net/">游侠</a>-<a href="https://www.tgbus.com/">电玩巴士</a><a href="https://www.a9vg.com/">A9VG</a></div>
-	<div class="category-row">页游：<a href="https://www.4399.com/">4399</a><a href="https://www.3366.com/">3366</a><a href="https://www.7k7k.com/">7k7k</a>-<a href="https://www.07073.com/">07073</a>-<a href="https://www.gamedog.cn/">游戏狗</a><a href="https://www.ptbus.com/">口袋巴士</a>-<a href="https://www.douyutv.com/">斗鱼</a><a href="https://www.aipai.com/">爱拍</a><a href="https://www.5173.com/">5173</a><a href="https://www.yy.com/">YY</a></div>
-	<div class="category-row alt-bg">手机：<a href="https://www.imobile.com.cn/">手机之家</a><a href="https://www.cnmo.com/">手机中国</a><a href="https://www.hiapk.com/">安卓网</a><a href="https://www.25pp.com/">PP助手</a><a href="https://www.91.com/">91</a><a href="https://www.gfan.com/">机锋</a>-<a href="https://www.mi.com/">小米</a><a href="https://www.vmall.com/">华为</a></div>
-	<div class="category-row">军体：<a href="https://www.xilu.com/">西陆</a><a href="https://www.tiexue.net/">铁血</a><a href="https://www.miercn.com/">米尔</a>-<a href="https://www.hupu.com/">虎扑</a><a href="https://www.zhibo8.cc/">直播吧</a>-<a href="https://www.dm5.com/">动漫屋</a></div>
-	<div class="category-row alt-bg">贸易：<a href="https://www.hc360.com/">慧聪</a><a href="https://www.1688.com/">1688</a><a href="https://www.alibaba.com/">Alibaba</a><a href="https://www.youboy.com/">一呼百应</a><a href="https://www.aliexpress.com/">AliExpress</a></div>
-	<div class="category-row">旅游：<a href="https://www.ctrip.com/">携程</a><a href="https://www.qunar.com/">去哪儿</a><a href="https://www.tuniu.com/">途牛</a><a href="https://www.cncn.com/">欣欣</a><a href="https://www.ly.com/">同程</a>-<a href="https://www.8264.com/">8264</a><a href="https://www.doyouhike.net/">磨房</a><a href="https://zgjz.org/">中国古建筑</a><a href="https://wecn.org/">寻味中国</a><a href="https://datubu.com/">大徒步</a><a href="https://ruhike.com/">如野户外</a></div>
-	<div class="category-row alt-bg">摄影：<a href="https://www.poco.cn/">POCO</a><a href="https://www.fengniao.com/">蜂鸟</a><a href="https://www.xitek.com">无忌</a><a href="https://www.photofans.cn/">佳友</a><a href="https://www.nphoto.net/">新摄影</a>-<a href="https://www.quanjing.com/">全景</a><a href="https://www.nipic.com/index.html">昵图</a><a href="https://www.yupoo.com/">又拍</a><a href="https://photo.163.com/">网易相册</a></div>
-	<div class="category-row">生活：<a href="https://www.ganji.com/">赶集</a><a href="https://www.58.com/">58同城</a><a href="https://www.baixing.com/">百姓</a><a href="https://www.dianping.com/">大众点评</a><a href="https://www.damai.cn/">大麦</a>-<a href="https://www.zhaopin.com/">智联</a><a href="https://www.51job.com/">前程无忧</a><a href="https://www.yjbys.com/">应届生</a>-<a href="https://www.aibang.com/">爱帮</a>-<a href="https://www.sssc.cn/">盛世</a></div>
-	<div class="category-row alt-bg">健康：<a href="https://www.39.net/">39健康</a><a href="https://www.xywy.com/">寻医问药</a><a href="https://www.120ask.com/">有问必答</a><a href="https://www.familydoctor.com.cn/">家庭医生</a><a href="https://www.99.com.cn/">99健康</a><a href="https://www.haodf.com/">好大夫</a><a href="https://www.dxy.cn/">丁香园</a>-<a href="https://paobu.org/">跑步跑起来</a></div>
-	<div class="category-row">育儿：<a href="https://www.babytree.com/">宝宝树</a><a href="https://www.yaolan.com/">摇篮</a><a href="https://www.pcbaby.com.cn/">太平洋亲子</a><a href="https://www.ci123.com/">育儿网</a><a href="https://www.mama.cn/">妈妈</a></div>
-	<div class="category-row alt-bg">娱乐：<a href="https://www.mtime.com/">时光</a><a href="https://ent.qq.com/">腾讯娱乐</a><a href="https://ent.sina.com.cn/">新浪娱乐</a><a href="https://ent.163.com/">网易娱乐</a><a href="https://ent.ifeng.com/">凤凰娱乐</a><a href="https://yule.sohu.com/">搜狐娱乐</a></div>
-	<div class="category-row">女性：<a href="https://www.onlylady.com/">OnlyLady</a><a href="https://www.yoka.com/">YOKA</a><a href="https://www.yxlady.com/">伊秀</a><a href="https://www.pinshan.com/">品善</a><a href="https://huaban.com/">花瓣</a><a href="https://www.lady8844.com/">爱美</a><a href="https://www.meilishuo.com/">美丽说</a><a href="https://www.rayli.com.cn/">瑞丽</a>-<a href="https://www.pclady.com.cn/">太平洋女性</a><a href="https://eladies.sina.com.cn/">新浪女性</a></div>
-	<div class="category-row alt-bg">音乐：<a href="https://www.kuwo.cn/">酷我</a><a href="https://www.xiami.com/">虾米</a><a href="https://www.yinyuetai.com/">音悦台</a><a href="https://www.1ting.com/">一听</a><a href="https://www.kugou.com/">酷狗</a><a href="https://www.9ku.com/">9酷</a><a href="https://y.qq.com/">QQ音乐</a><a href="https://music.baidu.com/">百度音乐</a><a href="https://mp3.sogou.com/">搜狗音乐</a><a href="http://www.midicn.com">MIDI</a><a href="http://www.midi.cn">音乐人</a></div>
-	<div class="category-row">美食：<a href="https://www.meishichina.com/">美食天下</a><a href="https://www.meishij.net/">美食杰</a><a href="https://www.xiachufang.com/">下厨房</a><a href="https://www.douguo.com/">豆果</a><a href="https://www.haodou.com/">好豆</a><a href="https://www.beitaichufang.com/">贝太厨房</a>-<a href="https://hejiu.org/">喝酒</a><a href="https://chapu.org/">茶谱</a></div>
-	<div class="category-row alt-bg">文学：<a href="https://www.qidian.com/">起点</a><a href="https://www.17k.com/">17k</a><a href="https://www.zongheng.com/">纵横</a><a href="https://www.xxsy.net/">潇湘</a><a href="https://www.xs8.cn/">小说吧</a><a href="https://www.jjwxc.net/">晋江</a><a href="https://www.hongxiu.com/">红袖添香</a></div>
-	<div class="category-row">学习：<a href="https://www.exam8.com/">考试吧</a><a href="https://www.eol.cn/">中教</a><a href="https://www.chsi.com.cn/">学信</a><a href="https://www.offcn.com/">中公</a><a href="https://www.xdf.cn/">新东方</a><a href="https://www.hujiang.com/">沪江</a>-<a href="https://www.xuetangx.com/">学堂</a><a href="https://www.icourse163.org/">中大</a><a href="https://www.ewant.org/">ewant</a><a href="https://www.coursera.org/">Coursera</a><a href="https://www.edx.org/">edX</a><a href="https://www.khanacademy.org/">Khan</a></div>
-	<div class="category-row alt-bg">资料：<a href="https://www.youdao.com/">有道</a><a href="https://www.iciba.com/">爱词霸</a><a href="https://www.360doc.com/">360doc</a><a href="https://www.docin.com/">豆丁</a><a href="https://dict.cn/">海词</a><a href="https://www.cnki.net/">知网</a><a href="https://www.wanfangdata.com.cn/">万方</a><a href="https://www.zdic.net/">汉典</a></div>
-	<div class="category-row">下载：<a href="https://www.360.cn/">360</a><a href="https://www.115.com/">115</a><a href="https://www.pc6.com/">PC6</a><a href="https://www.onlinedown.net/">华军</a><a href="https://www.crsky.com/">非凡</a><a href="https://www.xiazaiba.com/">下载吧</a><a href="https://www.skycn.com/">天空</a></div>
-	<div class="category-row alt-bg">地方：<a href="https://www.chinatimes.com/">中時</a><a href="https://www.eastday.com/">东方</a><a href="https://www.rednet.cn/">红网</a><a href="https://www.nen.com.cn/">东北</a><a href="https://www.zjol.com.cn/">浙江</a><a href="https://www.19lou.com/">19楼</a><a href="https://www.southcn.com/">南方</a><a href="https://www.yam.com/">蕃薯藤</a><a href="https://www.takungpao.com/">大公网</a><a href="https://365jia.cn/">万家</a><a href="https://365jilin.com/">吉和</a><a href="https://www.mnw.cn/">闽南</a><a href="https://www.cjn.cn/">长江</a><a href="https://www.workercn.cn/">中工</a><a href="https://www.online.sh.cn/">上海</a></div>
-
-	<footer>&copy; 2011-2026 NetCN导航 netcn.org 最简洁上网导航</footer>
+    <div id="categoriesGrid"><div class="loading" id="loadingMsg">加载中...</div></div>
+    <footer class="footer" data-zh="© 2011-2026 简洁导航 netcn.org 纯净无广告上网首页" data-en="© 2011-2026 Jianjie Nav netcn.org Clean Ad-Free Homepage"></footer>
 </div>
 
+<script src="sites.js"></script>
 <script>
-document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-	link.setAttribute('target', '_blank');
-});
+(function(){
+var h=document.documentElement,T=document.getElementById('themeToggle'),
+L=document.getElementById('langToggle'),G=document.getElementById('categoriesGrid'),
+S=document.getElementById('searchInput');
+
+var t=localStorage.getItem('theme');
+if(t){h.setAttribute('data-theme',t);T.textContent=t==='dark'?'☀':'☾';}
+else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches){h.setAttribute('data-theme','dark');T.textContent='☀';}
+T.addEventListener('click',function(){var c=h.getAttribute('data-theme')||'light',n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);T.textContent=n==='dark'?'☀':'☾';});
+
+var lang=localStorage.getItem('lang')||((navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en');
+var cur=lang;
+
+function setLang(l){
+  document.querySelectorAll('[data-zh]').forEach(function(el){
+    var v=el.getAttribute('data-'+l);if(v)el.innerHTML=v;
+  });
+  L.textContent=l==='zh'?'EN':'中';
+  h.setAttribute('lang',l==='zh'?'zh-CN':'en');
+}
+
+var C=['#2563eb','#dc2626','#059669','#7c3aed','#d97706'];
+function H(img,n,e){
+  if(!img.parentNode)return;
+  if(e){var s=document.createElement('span');s.style.cssText='width:15px;height:15px;font-size:15px;line-height:15px;text-align:center;display:inline-block;vertical-align:middle';s.textContent=e;img.parentNode.insertBefore(s,img);img.remove();return;}
+  var c=C[Math.abs(n.charCodeAt(0)||0)%5],i=n.charAt(0).toUpperCase();
+  img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><rect width="15" height="15" rx="3" fill="'+c+'" opacity="0.15"/><text x="7.5" y="10.5" text-anchor="middle" font-size="10" font-weight="700" fill="'+c+'" font-family="Arial,sans-serif">'+i+'</text></svg>').replace(/%20/g,' ').replace(/'/g,'%27');
+}
+function M(k,n,e){
+  var m=document.createElement('img');
+  m.style.cssText='width:15px;height:15px;border-radius:2px;object-fit:contain;opacity:0;vertical-align:middle';
+  m.alt='';m.loading='lazy';
+  m.addEventListener('load',function(){this.style.opacity='1';});
+  m.addEventListener('error',function(){H(this,n,e);});
+  m.src='favicon/'+k+'.png';
+  return m;
+}
+
+// Drag & Drop
+var dragEl=null,dragCat=null;
+function initDrag(sec,catIdx){
+  sec.addEventListener('dragstart',function(e){
+    var a=e.target.closest('a');if(!a)return;
+    dragEl=a;dragCat=catIdx;
+    a.classList.add('dragging');
+    e.dataTransfer.effectAllowed='move';
+    e.dataTransfer.setData('text/plain',a.href);
+  });
+  sec.addEventListener('dragend',function(e){
+    var a=e.target.closest('a');if(a)a.classList.remove('dragging');
+    if(dragEl)dragEl.classList.remove('dragging');
+    dragEl=null;dragCat=null;
+  });
+}
+
+function R(){
+  var d=window.sitesData?window.sitesData[cur]:null;
+  if(!d||typeof d!=='object'){
+    G.innerHTML='<div style="text-align:center;padding:40px;color:var(--color-text-tertiary)">'+(cur==='zh'?'数据加载失败，请刷新页面':'Data load failed, please refresh')+'</div>';
+    return;
+  }
+  var e=document.getElementById('loadingMsg');if(e)e.style.display='none';
+  G.innerHTML='';setLang(cur);
+  
+  var gridContainer=document.createElement('div');gridContainer.className='categories-grid';
+  var catEntries=Object.entries(d);
+  var catIdx=0;
+  catEntries.forEach(function(entry){
+    var catName=entry[0],items=entry[1];
+    if(!items||!items.length)return;
+    
+    var sec=document.createElement('div');sec.className='category-section';
+    var tag=document.createElement('span');tag.className='cat-tag';
+    tag.textContent=catName;tag.style.background='#2563eb';
+    sec.appendChild(tag);
+    
+    // Toggle collapse via tag click
+    var collapseKey='nav_collapse_'+cur+'_'+catIdx;
+    var isCollapsed=localStorage.getItem(collapseKey)==='1';
+    tag.style.cursor='pointer';
+    tag.addEventListener('click',function(){
+      var anchors=sec.querySelectorAll('a');
+      var hidden=anchors.length>0&&anchors[0].style.display==='none';
+      anchors.forEach(function(a){a.style.display=hidden?'':'none';});
+      localStorage.setItem(collapseKey,hidden?'0':'1');
+    });
+    
+    // Apply saved order
+    var orderKey='nav_order_'+cur+'_'+catIdx;
+    var savedOrder=localStorage.getItem(orderKey);
+    var orderedItems;
+    if(savedOrder){
+      try{
+        var urlOrder=JSON.parse(savedOrder);
+        var itemByUrl={};
+        items.forEach(function(it){itemByUrl[it.url]=it;});
+        orderedItems=[];
+        urlOrder.forEach(function(url){
+          if(itemByUrl[url]){orderedItems.push(itemByUrl[url]);delete itemByUrl[url];}
+        });
+        Object.keys(itemByUrl).forEach(function(url){orderedItems.push(itemByUrl[url]);});
+      }catch(e2){orderedItems=items;}
+    }else{orderedItems=items;}
+    
+    function favKey(url){
+      var h=url.replace('https://','').replace('http://','').split('/')[0].replace(/^www\./,'').replace(/^m\./,'');
+      var p=h.split('.');
+      if(p.length<=2)return h;
+      var l2=p.slice(-2).join('.'),l3=p.slice(-3).join('.');
+      var s={'com.cn':1,'net.cn':1,'org.cn':1,'gov.cn':1,'edu.cn':1,'co.jp':1,'co.uk':1,'com.au':1,'com.br':1};
+      return s[l2]?l3:l2;
+    }
+    orderedItems.forEach(function(item){
+      var n=item.name,u=item.url,em=item.emoji;
+      var k=favKey(u);
+      var a=document.createElement('a');
+      a.href=u;a.target='_blank';a.rel='noopener';
+      if(isCollapsed)a.style.display='none';
+      a.appendChild(M(k,n,em));
+      a.appendChild(document.createTextNode(n));
+      sec.appendChild(a);
+    });
+    
+    gridContainer.appendChild(sec);
+    initDrag(sec,catIdx);
+    catIdx++;
+  });
+  
+  G.appendChild(gridContainer);
+  gridContainer.addEventListener('dragover',function(e){e.preventDefault();e.dataTransfer.dropEffect='move';});
+  gridContainer.addEventListener('drop',function(e){
+    e.preventDefault();
+    if(!dragEl)return;
+    var target=e.target.closest('a');
+    if(!target||target===dragEl)return;
+    if(target.parentNode!==dragEl.parentNode)return;
+    var sec=dragEl.parentNode;
+    sec.insertBefore(dragEl,target.nextSibling);
+    var urls=[];
+    sec.querySelectorAll('a').forEach(function(a){urls.push(a.href);});
+    var catIdx=Array.from(G.querySelectorAll('.category-section')).indexOf(sec);
+    localStorage.setItem('nav_order_'+cur+'_'+catIdx,JSON.stringify(urls));
+  });
+  doSearch();
+}
+
+function doSearch(){
+  var q=S.value.trim().toLowerCase();
+  if(!q){G.querySelectorAll('.category-section a').forEach(function(a){a.classList.remove('search-match','search-dim');});G.querySelectorAll('.cat-tag').forEach(function(t){t.classList.remove('search-dim');});return;}
+  G.querySelectorAll('.category-section').forEach(function(sec){
+    var tag=sec.querySelector('.cat-tag'),has=!1,catMatch=tag&&tag.textContent.toLowerCase().indexOf(q)!==-1;
+    sec.querySelectorAll('a').forEach(function(a){
+      if(catMatch||a.textContent.toLowerCase().indexOf(q)!==-1){a.classList.add('search-match');a.classList.remove('search-dim');has=!0;}
+      else{a.classList.add('search-dim');a.classList.remove('search-match');}
+    });
+    tag.classList.toggle('search-dim',!has);
+  });
+}
+
+L.addEventListener('click',function(){cur=cur==='zh'?'en':'zh';localStorage.setItem('lang',cur);R();});
+S.addEventListener('input',doSearch);
+R();
+})();
 </script>
 </body>
 </html>

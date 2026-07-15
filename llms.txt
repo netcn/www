@@ -1,0 +1,20 @@
+# 简洁导航 (Jianjie Nav)
+> 纯净无广告上网首页，收录精选中文和英文网站，分类清晰，一键直达。
+
+## 网站信息
+- 域名: https://netcn.org
+- 语言: 中文 (zh-CN) / 英文 (en)
+- 类型: 网址导航站
+
+## 主要内容
+- 首页: https://netcn.org/ - 70+中文分类 + 54+英文分类，收录900+精选网站
+- 趣味乐园: https://netcn.org/fun.html - 脑筋急转弯、猜字谜、猜谜语、智力测试聚合页
+- 智力测试: https://netcn.org/iq.html - 3000道精选智力测试题
+- 猜谜语: https://netcn.org/miyu.html - 3000道精选谜语
+- 猜字谜: https://netcn.org/zimi.html - 3000道精选字谜
+- 脑筋急转弯: https://netcn.org/njjzw.html - 3000道精选脑筋急转弯
+
+## 分类体系
+中文分类: 搜索、视频、社交、电商、智能、外卖、资讯、门户、官媒、时政、财经、科技、数码、极客、编程、社区、百科、工具、模型、平台、企业、云服、音乐、论坛、游戏、游媒、直播、影视、影音、播客、体育、阅读、网盘、办公、笔记、邮箱、金融、证券、投资、银行、保险、旅游、出行、航空、地图、汽车、房产、快递、物流、招聘、生活、美食、健康、医疗、二手、折扣、海淘、百度、设计、摄影、手机、系统、教育、课教、网课、考证、通信、政府、企查、天气
+
+英文分类: Search, Video, Social, Shop, AI, Stream, Chat, News, Media, Tech, Geek, Biz, Music, Forum, Games, Movie, Sports, Finance, Banks, Invest, Pay, Crypto, Health, Wellness, Travel, Food, Life, Fashion, Jobs, Learn, Wiki, PM, Storage, Office, Email, Cloud, Dev, Tools, Design, Photos, Hardware, Hosting, Models, Deals, Cars, Transit, Maps, Weather, Ship, Bus, Air, Security, Sub, Image, Recipes, Money

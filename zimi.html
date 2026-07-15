@@ -1,343 +1,68 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="description" content="3000个精选字谜，分类清晰，趣味十足，点击显示答案，随机切换题目。">
-	<title>字谜_3000题_NetCN导航</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="favicon.ico">
-	<style>
-		.quiz-container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-		}
-		.quiz-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			flex-wrap: wrap;
-			gap: 10px;
-			margin-bottom: 20px;
-			padding: 10px 15px;
-			background-color: #FFFAEE;
-			border-radius: 4px;
-		}
-		.quiz-stats {
-			font-size: 16px;
-			color: #666;
-		}
-		.quiz-stats span {
-			color: #1c7fdb;
-			font-weight: bold;
-		}
-		.category-select {
-			padding: 6px 12px;
-			font-size: 16px;
-			border: 1px solid #d0d0d0;
-			border-radius: 4px;
-			background: #fff;
-			color: #333;
-			cursor: pointer;
-			font-family: inherit;
-		}
-		.category-select:focus {
-			border-color: #1c7fdb;
-			outline: none;
-		}
-		.quiz-card {
-			background-color: #FAFBFD;
-			border-radius: 8px;
-			padding: 40px 30px;
-			margin-bottom: 20px;
-			min-height: 200px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-			transition: all 0.3s ease;
-		}
-		.quiz-category-tag {
-			display: inline-block;
-			background: #1c7fdb;
-			color: #fff;
-			padding: 3px 12px;
-			border-radius: 12px;
-			font-size: 13px;
-			margin-bottom: 15px;
-		}
-		.quiz-question {
-			font-size: 28px;
-			color: #333;
-			line-height: 1.6;
-			margin-bottom: 20px;
-			word-break: break-word;
-		}
-		.quiz-answer {
-			font-size: 24px;
-			color: #FF0000;
-			line-height: 1.6;
-			padding: 15px 20px;
-			background: #FFF5F5;
-			border-radius: 6px;
-			margin-top: 10px;
-			display: none;
-			word-break: break-word;
-		}
-		.quiz-answer.show {
-			display: block;
-			animation: fadeIn 0.3s ease;
-		}
-		@keyframes fadeIn {
-			from { opacity: 0; transform: translateY(-10px); }
-			to { opacity: 1; transform: translateY(0); }
-		}
-		.quiz-buttons {
-			display: flex;
-			gap: 15px;
-			justify-content: center;
-			flex-wrap: wrap;
-		}
-		.btn {
-			padding: 12px 28px;
-			font-size: 18px;
-			border: none;
-			border-radius: 6px;
-			cursor: pointer;
-			font-family: inherit;
-			transition: all 0.2s ease;
-			font-weight: bold;
-		}
-		.btn-answer {
-			background-color: #1c7fdb;
-			color: #fff;
-		}
-		.btn-answer:hover {
-			background-color: #1785eb;
-		}
-		.btn-answer.hide-answer {
-			background-color: #FF0000;
-		}
-		.btn-answer.hide-answer:hover {
-			background-color: #e60000;
-		}
-		.btn-next {
-			background-color: #FFFAEE;
-			color: #1c7fdb;
-			border: 2px solid #1c7fdb;
-		}
-		.btn-next:hover {
-			background-color: #1c7fdb;
-			color: #fff;
-		}
-		.btn-prev {
-			background-color: #F0F5FB;
-			color: #666;
-			border: 2px solid #d0d0d0;
-		}
-		.btn-prev:hover {
-			background-color: #e0e0e0;
-		}
-		.nav-links {
-			text-align: center;
-			margin-top: 20px;
-			padding: 15px;
-			background-color: #F0F5FB;
-			border-radius: 4px;
-			font-size: 18px;
-		}
-		.nav-links a {
-			margin: 0 10px;
-		}
-		@media screen and (max-width: 768px) {
-			.quiz-card {
-				padding: 25px 15px;
-				min-height: 150px;
-			}
-			.quiz-question {
-				font-size: 20px;
-			}
-			.quiz-answer {
-				font-size: 18px;
-			}
-			.btn {
-				padding: 10px 20px;
-				font-size: 16px;
-			}
-			.quiz-header {
-				flex-direction: column;
-				text-align: center;
-			}
-			.nav-links {
-				font-size: 14px;
-			}
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3000个精选字谜，分类清晰，趣味十足，点击显示答案，随机切换题目。涵盖汉字、成语、拆字、谐音等各类字谜，提升汉字认知能力。">
+    <meta name="keywords" content="字谜,猜字谜,字谜大全,汉字谜语,成语字谜,拆字谜,趣味问答">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://netcn.org/zimi.html">
+    <meta property="og:title" content="猜字谜 - 3000题精选·汉字趣味谜语">
+    <meta property="og:description" content="3000个精选字谜，分类清晰，点击显示答案，随机切换。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netcn.org/zimi.html">
+    <meta property="og:site_name" content="简洁导航">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="猜字谜 - 3000题精选·汉字趣味谜语">
+    <meta name="twitter:description" content="3000个精选字谜，点击显示答案，随机切换。">
+    <title>猜字谜 - 3000题精选·汉字趣味谜语 | 简洁导航</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="llms-txt" content="https://netcn.org/llms.txt">
 </head>
 <body>
 <div class="container">
-	<header class="header">
-		<div class="logo"><b class="net">net</b><b class="cn">cn</b>.org</div>
-	</header>
+    <header class="header">
+        <a href="/" class="logo"><span class="logo-jj">简洁</span><span class="logo-dh">导航</span></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
+    </header>
 
-	<div class="quiz-container">
-		<div class="quiz-header">
-			<div class="quiz-stats"><b>猜字谜： </b>第 <span id="currentNum">1</span> / <span id="totalNum">3000</span> 题</div>
-			<select class="category-select" id="categorySelect">
-				<option value="all">全部分类</option>
-			</select>
-		</div>
+    <div class="quiz-container">
+        <div class="quiz-controls">
+            <div class="quiz-stats"><b>猜字谜</b> 第 <span id="currentNum">1</span> / <span id="totalNum">3000</span> 题</div>
+            <select class="category-select" id="categorySelect">
+                <option value="all">全部分类</option>
+            </select>
+        </div>
 
-		<div class="quiz-card">
-			<div class="quiz-category-tag" id="categoryTag">打一字</div>
-			<div class="quiz-question" id="question">一口吃掉牛尾巴（打一字）</div>
-			<div class="quiz-answer" id="answer">告</div>
-		</div>
+        <div class="quiz-card">
+            <div class="quiz-category-tag" id="categoryTag">字谜</div>
+            <div class="quiz-question" id="question">一加一（打一字）</div>
+            <div class="quiz-answer" id="answer">王</div>
+        </div>
 
-		<div class="quiz-buttons">
-			<button class="btn btn-prev" id="btnPrev" title="上一题">◀ 上一题</button>
-			<button class="btn btn-answer" id="btnAnswer">显示答案</button>
-			<button class="btn btn-next" id="btnNext">随机下一题 ▶</button>
-		</div>
+        <div class="quiz-buttons">
+            <button class="btn btn-prev" id="btnPrev">◀ 上一题</button>
+            <button class="btn btn-answer" id="btnAnswer">显示答案</button>
+            <button class="btn btn-next" id="btnNext">随机下一题 ▶</button>
+        </div>
 
-		<div class="nav-links">
-			更多趣味：<a href="njjzw.html">脑筋急转弯</a> - <a href="zimi.html">猜字谜</a> - <a href="miyu.html">猜谜语</a> - <a href="iq.html">智力测试</a>
-		</div>
-	</div>
+        <div class="quiz-nav-links">
+            更多趣味：
+            <a href="njjzw.html">脑筋急转弯</a>
+            <a href="zimi.html">猜字谜</a>
+            <a href="miyu.html">猜谜语</a>
+            <a href="iq.html">智力测试</a>
+        </div>
+    </div>
 
-	<footer>&copy; 2011-2026 NetCN导航 netcn.org 最简洁上网导航</footer>
+    <footer class="footer">
+        &copy; 2011-2026 简洁导航 netcn.org
+    </footer>
 </div>
 
 <script src="zimi.js"></script>
-<script>
-(function() {
-	var allQuestions = window.quizData || [];
-	var filteredQuestions = allQuestions.slice();
-	var currentIndex = 0;
-	var answerVisible = false;
-	var historyStack = [];
-
-	var categorySelect = document.getElementById('categorySelect');
-	var currentNum = document.getElementById('currentNum');
-	var totalNum = document.getElementById('totalNum');
-	var categoryTag = document.getElementById('categoryTag');
-	var questionEl = document.getElementById('question');
-	var answerEl = document.getElementById('answer');
-	var btnAnswer = document.getElementById('btnAnswer');
-	var btnNext = document.getElementById('btnNext');
-	var btnPrev = document.getElementById('btnPrev');
-
-	var categories = {};
-	allQuestions.forEach(function(q) {
-		if (!categories[q.c]) categories[q.c] = 0;
-		categories[q.c]++;
-	});
-
-	Object.keys(categories).sort().forEach(function(cat) {
-		var opt = document.createElement('option');
-		opt.value = cat;
-		opt.textContent = cat + ' (' + categories[cat] + '题)';
-		categorySelect.appendChild(opt);
-	});
-
-	function shuffleArray(arr) {
-		var a = arr.slice();
-		for (var i = a.length - 1; i > 0; i--) {
-			var j = Math.floor(Math.random() * (i + 1));
-			var t = a[i]; a[i] = a[j]; a[j] = t;
-		}
-		return a;
-	}
-
-	filteredQuestions = shuffleArray(filteredQuestions);
-
-	function showQuestion(index) {
-		if (filteredQuestions.length === 0) return;
-		if (index < 0) index = filteredQuestions.length - 1;
-		if (index >= filteredQuestions.length) index = 0;
-		currentIndex = index;
-		var q = filteredQuestions[currentIndex];
-		categoryTag.textContent = q.c;
-		questionEl.textContent = q.q;
-		answerEl.textContent = q.a;
-		answerEl.classList.remove('show');
-		btnAnswer.textContent = '显示答案';
-		btnAnswer.classList.remove('hide-answer');
-		answerVisible = false;
-		currentNum.textContent = currentIndex + 1;
-		totalNum.textContent = filteredQuestions.length;
-	}
-
-	function randomQuestion() {
-		if (filteredQuestions.length === 0) return;
-		historyStack.push(currentIndex);
-		var newIndex;
-		do {
-			newIndex = Math.floor(Math.random() * filteredQuestions.length);
-		} while (newIndex === currentIndex && filteredQuestions.length > 1);
-		showQuestion(newIndex);
-	}
-
-	function prevQuestion() {
-		if (historyStack.length > 0) {
-			var prevIndex = historyStack.pop();
-			showQuestion(prevIndex);
-		}
-	}
-
-	btnAnswer.addEventListener('click', function() {
-		if (answerVisible) {
-			answerEl.classList.remove('show');
-			btnAnswer.textContent = '显示答案';
-			btnAnswer.classList.remove('hide-answer');
-			answerVisible = false;
-		} else {
-			answerEl.classList.add('show');
-			btnAnswer.textContent = '隐藏答案';
-			btnAnswer.classList.add('hide-answer');
-			answerVisible = true;
-		}
-	});
-
-	btnNext.addEventListener('click', function() {
-		historyStack = [];
-		randomQuestion();
-	});
-
-	btnPrev.addEventListener('click', function() {
-		prevQuestion();
-	});
-
-	categorySelect.addEventListener('change', function() {
-		var cat = this.value;
-		if (cat === 'all') {
-			filteredQuestions = allQuestions.slice();
-		} else {
-			filteredQuestions = allQuestions.filter(function(q) { return q.c === cat; });
-		}
-		filteredQuestions = shuffleArray(filteredQuestions);
-		historyStack = [];
-		showQuestion(0);
-	});
-
-	document.addEventListener('keydown', function(e) {
-		if (e.key === ' ' || e.key === 'Spacebar') {
-			e.preventDefault();
-			btnAnswer.click();
-		} else if (e.key === 'ArrowRight') {
-			e.preventDefault();
-			btnNext.click();
-		} else if (e.key === 'ArrowLeft') {
-			e.preventDefault();
-			btnPrev.click();
-		}
-	});
-
-	showQuestion(0);
-})();
-</script>
+<script src="quiz.js"></script>
 </body>
 </html>

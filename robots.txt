@@ -1,0 +1,46 @@
+Sitemap: https://netcn.org/sitemap.xml
+LLMs: https://netcn.org/llms.txt
+
+User-agent: *
+Allow: /
+Disallow: /favicon/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /favicon/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /favicon/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /favicon/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /favicon/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /favicon/
+
+User-agent: CCBot
+Allow: /
+Disallow: /favicon/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /favicon/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /favicon/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /favicon/
+
+User-agent: Diffbot
+Allow: /
+Disallow: /favicon/

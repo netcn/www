@@ -12,15 +12,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://netcn.org/">
     <meta property="og:site_name" content="简洁导航">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://netcn.org/assets/icons/og-share.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://netcn.org/assets/icons/og-share.png">
     <meta name="twitter:title" content="简洁导航 - 纯净无广告上网首页">
     <meta name="twitter:description" content="收录精选中文和英文网站，分类清晰，一键直达。">
     <title>简洁导航 - 纯净无广告上网首页 | netcn.org</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="shell/netcn-shell.css">
+    <script src="shell/shell.js"></script>
+    <link rel="icon" href="favicon.ico" sizes="16x16 24x24 32x32 48x48">
+    <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <meta name="llms-txt" content="https://netcn.org/llms.txt">
     <meta name="msvalidate.01" content="E1E1F6FA255BD695C81B5C32FB2DC80E" />
-	<meta name="google-adsense-account" content="ca-pub-0088997035636558">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -49,33 +55,38 @@
     .cat-tag.search-dim{opacity:.2;pointer-events:none}
     .category-section a.search-match{background:var(--color-accent);color:#fff;border-color:var(--color-accent);box-shadow:0 0 12px var(--color-accent-bg);transform:scale(1.05);position:relative;z-index:1}
     </style>
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 </head>
 <body>
 <div class="container">
-    <header class="header">
-        <a href="/" class="logo"><span class="logo-jj">简洁</span><span class="logo-dh">导航</span></a>
-        <div class="search-box">
+    <nav class="nc-shell" aria-label="netcn 站点导航">
+        <a href="/" class="nc-brand"><span class="nc-mk">简</span><span>简洁导航</span></a>
+        <div class="nc-sw">
+            <a href="/" data-nc-to="nav">导航</a>
+            <a href="https://ask.netcn.org/" data-nc-to="ask">科学问答</a>
+            <a href="https://quiz.netcn.org/" data-nc-to="quiz">头脑体操</a>
+            <a href="https://game.netcn.org/" data-nc-to="game">玩游戏</a>
+        </div>
+        <div class="nc-search has-icon">
             <span class="search-icon">⌕</span>
             <input type="text" id="searchInput" data-zh="搜索站点..." data-en="Search sites..." placeholder="搜索站点..." autocomplete="off">
         </div>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch Language">EN</button>
-        <div class="header-fun">
-            <a href="quiz.html" class="fun-btn" title="头脑体操">💡</a>
+        <div class="nc-tools">
+            <button class="lang-toggle" id="langToggle" aria-label="Switch Language">EN</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
-    </header>
+    </nav>
 
     <div id="categoriesGrid"><div class="loading" id="loadingMsg">加载中...</div></div>
-	<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-0088997035636558"
-     data-ad-slot="9579346810"
-     data-auto-format="rspv"
-     data-full-width="">
-       <div overflow=""></div>
-	</amp-ad>
-    <footer class="footer" data-zh="© 2011-2026 简洁导航 netcn.org 纯净无广告上网首页" data-en="© 2011-2026 Jianjie Nav netcn.org Clean Ad-Free Homepage"></footer>
+    <footer class="nc-foot">
+        <nav class="nc-foot-nav" aria-label="netcn 站点">
+            <a href="/" data-nc-to="nav">导航</a>
+            <a href="https://ask.netcn.org/" data-nc-to="ask">科学问答</a>
+            <a href="https://quiz.netcn.org/" data-nc-to="quiz">头脑体操</a>
+            <a href="https://game.netcn.org/" data-nc-to="game">玩游戏</a>
+        </nav>
+        <span class="nc-foot-note" data-zh="© 2011-2026 简洁导航 netcn.org" data-en="© 2011-2026 Jianjie Nav netcn.org">© 2011-2026 简洁导航 netcn.org</span>
+        <span class="nc-foot-site" data-zh="900+ 站点 · 纯净无广告" data-en="900+ sites · ad-free">900+ 站点 · 纯净无广告</span>
+    </footer>
 </div>
 
 <script src="sites.js"></script>

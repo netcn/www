@@ -55,7 +55,7 @@ window.sitesData = {
       {name:"百度地图",url:"https://map.baidu.com/"},
       {name:"12306",url:"https://www.12306.cn/"},
       {name:"公交",url:"https://www.8684.cn/"},
-      {name:"天气",url:"http://www.weather.com.cn/"},
+      {name:"天气",url:"https://www.weather.com.cn/"},
       {name:"大众点评",url:"https://www.dianping.com/"}
     ],
     "资讯": [
@@ -557,7 +557,7 @@ window.sitesData = {
       {name:"鲁大师",url:"https://www.ludashi.com/"},
       {name:"7-Zip",url:"https://www.7-zip.org/"},
       {name:"Bandizip",url:"https://www.bandisoft.com/bandizip/"},
-      {name:"格式工厂",url:"http://www.pcfreetime.com/"},
+      {name:"格式工厂",url:"https://www.pcfreetime.com/"},
       {name:"比特彗星",url:"https://www.bitcomet.com/"},
       {name:"草料二维码",url:"https://cli.im/"},
       {name:"APKPure",url:"https://apkpure.com/"}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="脑筋急转弯、猜字谜、猜谜语、智力测试，3000+精选题目，分类清晰，趣味十足，点击显示答案，随机切换。">
+    <meta name="keywords" content="脑筋急转弯,猜字谜,猜谜语,智力测试,趣味问答,谜语大全,字谜大全">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://netcn.org/quiz.html">
+    <meta property="og:title" content="头脑体操 - 脑筋急转弯·猜字谜·猜谜语·智力测试">
+    <meta property="og:description" content="3000+精选题目，分类清晰，趣味十足，点击显示答案，随机切换。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://netcn.org/quiz.html">
+    <meta property="og:site_name" content="简洁导航">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="头脑体操 - 脑筋急转弯·猜字谜·猜谜语·智力测试">
+    <meta name="twitter:description" content="3000+精选题目，分类清晰，趣味十足，点击显示答案。">
+    <title>头脑体操 - 脑筋急转弯·猜字谜·猜谜语·智力测试</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="llms-txt" content="https://netcn.org/llms.txt">
+    <style>
+    .quiz-tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+    .quiz-tab {
+      flex: 1; padding: 8px 12px; border: 1px solid var(--color-border-light);
+      border-radius: 8px; cursor: pointer; text-align: center; font-size: 15px;
+      background: var(--color-card-bg); color: var(--color-text-secondary); font-weight: 600;
+      min-width: 100px;
+    }
+    .quiz-tab:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .quiz-tab.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <a href="/" class="logo"><span class="logo-jj">简洁</span><span class="logo-dh">导航</span></a>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
+    </header>
+
+    <div class="quiz-container">
+        <div class="quiz-tabs" id="quizTabs">
+            <div class="quiz-tab active" data-type="njjzw">💡 脑筋急转弯</div>
+            <div class="quiz-tab" data-type="zimi">✍️ 猜字谜</div>
+            <div class="quiz-tab" data-type="miyu">❓ 猜谜语</div>
+            <div class="quiz-tab" data-type="iq">🧠 智力测试</div>
+        </div>
+
+        <div class="quiz-controls">
+            <div class="quiz-stats"><b id="quizTitle">脑筋急转弯</b> 第 <span id="currentNum">1</span> / <span id="totalNum">0</span> 题</div>
+        </div>
+
+        <div class="quiz-card">
+            <div class="quiz-category-tag" id="categoryTag">-</div>
+            <div class="quiz-question" id="question">加载中...</div>
+            <div class="quiz-answer" id="answer"></div>
+        </div>
+
+        <div class="quiz-buttons">
+            <button class="btn btn-prev" id="btnPrev">◀ 上一题</button>
+            <button class="btn btn-answer" id="btnAnswer">显示答案</button>
+            <button class="btn btn-next" id="btnNext">随机下一题 ▶</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2011-2026 简洁导航 netcn.org
+    </footer>
+</div>
+
+<script>
+(function(){var h=document.documentElement,t=document.getElementById('themeToggle'),th=localStorage.getItem('theme');if(th){h.setAttribute('data-theme',th);t.textContent=th==='dark'?'☀':'☾';}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){h.setAttribute('data-theme','dark');t.textContent='☀';}t.addEventListener('click',function(){var c=h.getAttribute('data-theme')||'light',n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);t.textContent=n==='dark'?'☀':'☾';});})();
+</script>
+<script src="quiz.js"></script>
+<script>
+var allData = window.allQuizData || {};
+
+function initQuiz() {
+  var titles = {njjzw:'脑筋急转弯',zimi:'猜字谜',miyu:'猜谜语',iq:'智力测试'};
+  var filtered = [], idx = 0, vis = false, hist = [];
+
+  var tabs = document.querySelectorAll('.quiz-tab');
+  var title = document.getElementById('quizTitle');
+  var cn = document.getElementById('currentNum');
+  var tn = document.getElementById('totalNum');
+  var ct = document.getElementById('categoryTag');
+  var q = document.getElementById('question');
+  var a = document.getElementById('answer');
+  var ba = document.getElementById('btnAnswer');
+  var bn = document.getElementById('btnNext');
+  var bp = document.getElementById('btnPrev');
+
+  function shuffle(arr) {
+    var r = arr.slice();
+    for (var i = r.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = r[i]; r[i] = r[j]; r[j] = t;
+    }
+    return r;
+  }
+
+  function show(i) {
+    if (!filtered.length) return;
+    if (i < 0) i = filtered.length - 1;
+    if (i >= filtered.length) i = 0;
+    idx = i;
+    var d = filtered[idx];
+    ct.textContent = d.c;
+    q.textContent = d.q;
+    a.textContent = d.a;
+    a.classList.remove('show');
+    ba.textContent = '显示答案';
+    ba.classList.remove('hide-answer');
+    vis = false;
+    cn.textContent = idx + 1;
+    tn.textContent = filtered.length;
+  }
+
+  function rand() {
+    if (!filtered.length) return;
+    hist.push(idx);
+    var n;
+    do { n = Math.floor(Math.random() * filtered.length); } while (n === idx && filtered.length > 1);
+    show(n);
+  }
+
+  function prev() {
+    if (hist.length) show(hist.pop());
+  }
+
+  function switchType(type) {
+    title.textContent = titles[type];
+    tabs.forEach(function(t) { t.classList.toggle('active', t.dataset.type === type); });
+    filtered = shuffle(allData[type] || []);
+    hist = [];
+    show(0);
+  }
+
+  // Tab switching
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      switchType(this.dataset.type);
+    });
+  });
+
+  // Button handlers
+  ba.addEventListener('click', function() {
+    if (vis) {
+      a.classList.remove('show');
+      ba.textContent = '显示答案';
+      ba.classList.remove('hide-answer');
+      vis = false;
+    } else {
+      a.classList.add('show');
+      ba.textContent = '隐藏答案';
+      ba.classList.add('hide-answer');
+      vis = true;
+    }
+  });
+  bn.addEventListener('click', function() { hist = []; rand(); });
+  bp.addEventListener('click', function() { prev(); });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.key === ' ') { e.preventDefault(); ba.click(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); bn.click(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); bp.click(); }
+  });
+
+  // Start with first type
+  switchType('njjzw');
+}
+initQuiz();
+</script>
+</body>
+</html>

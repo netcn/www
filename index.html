@@ -72,8 +72,8 @@
             <input type="text" id="searchInput" data-zh="搜索站点..." data-en="Search sites..." placeholder="搜索站点..." autocomplete="off">
         </div>
         <div class="nc-tools">
-            <button class="lang-toggle" id="langToggle" aria-label="Switch Language">EN</button>
-            <button class="theme-toggle" id="themeToggle" aria-label="切换主题">☾</button>
+            <button class="nc-tool" id="ncTheme" type="button" aria-label="切换明暗">☾</button>
+            <button class="nc-tool" id="ncLang" type="button" aria-label="切换语言">EN</button>
         </div>
     </nav>
 
@@ -93,14 +93,10 @@
 <script src="sites.js"></script>
 <script>
 (function(){
-var h=document.documentElement,T=document.getElementById('themeToggle'),
-L=document.getElementById('langToggle'),G=document.getElementById('categoriesGrid'),
+var h=document.documentElement,G=document.getElementById('categoriesGrid'),
 S=document.getElementById('searchInput');
 
-var t=localStorage.getItem('theme');
-if(t){h.setAttribute('data-theme',t);T.textContent=t==='dark'?'☀':'☾';}
-else if(window.matchMedia('(prefers-color-scheme:dark)').matches){h.setAttribute('data-theme','dark');T.textContent='☀';}
-T.addEventListener('click',function(){var c=h.getAttribute('data-theme')||'light',n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('theme',n);T.textContent=n==='dark'?'☀':'☾';});
+/* 明暗切换由 shell/shell.js 统一驱动，这里只负责内容重渲染 */
 
 var lang=localStorage.getItem('lang')||((navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en');
 var cur=lang;
@@ -109,7 +105,6 @@ function setLang(l){
   document.querySelectorAll('[data-zh]').forEach(function(el){
     var v=el.getAttribute('data-'+l);if(v)el.innerHTML=v;
   });
-  L.textContent=l==='zh'?'EN':'中';
   h.setAttribute('lang',l==='zh'?'zh-CN':'en');
 }
 
@@ -253,7 +248,7 @@ function doSearch(){
   });
 }
 
-L.addEventListener('click',function(){cur=cur==='zh'?'en':'zh';localStorage.setItem('lang',cur);R();});
+document.addEventListener('ncn:lang',function(e){cur=e.detail.lang;R();});
 S.addEventListener('input',doSearch);
 R();
 })();

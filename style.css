@@ -61,3 +61,20 @@ a:hover { color: var(--color-link-hover); }
   .category-section a { font-size: 13px; padding: 2px 5px; }
   .categories-grid { column-gap: 3px; row-gap: 3px; }
 }
+
+/* ---- 全站共用视觉语言映射（2026-11-07） ---- */
+:root{--ui-ac-site:#2563eb;
+  --font-sans:var(--ui-font);
+  --color-bg:var(--ui-bg);--color-surface:var(--ui-surface);--color-surface-hover:var(--ui-line-soft);
+  --color-card-bg:var(--ui-card);--color-header-bg:var(--ui-card);
+  --color-text-primary:var(--ui-ink);--color-text-secondary:var(--ui-ink2);--color-text-tertiary:var(--ui-ink3);
+  --color-link:var(--ui-ac);--color-link-hover:var(--ui-ac);
+  --color-border:var(--ui-line);--color-border-light:var(--ui-line-soft);
+  --color-accent:var(--ui-ac);--color-accent-bg:var(--ui-ac-soft);
+}
+[data-theme="dark"]{--ui-ac-site:#60a5fa;
+  --color-bg:var(--ui-bg);--color-surface:var(--ui-surface);--color-card-bg:var(--ui-card);
+  --color-text-primary:var(--ui-ink);--color-text-secondary:var(--ui-ink2);--color-text-tertiary:var(--ui-ink3);
+  --color-border:var(--ui-line);--color-border-light:var(--ui-line-soft);
+  --color-accent:var(--ui-ac);--color-link:var(--ui-ac);--color-accent-bg:var(--ui-ac-soft);
+}

@@ -1,13 +1,13 @@
 {
-  "name": "简洁导航 · netcn.org",
+  "name": "简洁导航 · Simple Nav | netcn.org",
   "short_name": "简洁导航",
-  "description": "纯净无广告上网首页，收录精选中文和英文网站。",
+  "description": "纯净无广告上网首页 · A clean, ad-free start page with 900+ curated sites.",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
   "id": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#fafbfc",
   "theme_color": "#2563eb",
   "icons": [
     { "src": "favicon.ico", "sizes": "48x48", "type": "image/x-icon", "purpose": "any" },

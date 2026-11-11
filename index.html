@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8"><script id="ncn-theme-boot">(function(){try{var d=document.documentElement,t="";try{t=localStorage.getItem("theme")||""}catch(e){}if(t!=="dark"&&t!=="light"){var m=(document.cookie||"").match(/(?:^|; )ncn_theme=(dark|light)/);t=m?m[1]:""}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light"}d.setAttribute("data-theme",t);if(t==="dark"){d.classList.add("dark")}else{d.classList.remove("dark")}}catch(e){}})();</script>
+    <meta charset="UTF-8"><script id="ncn-theme-boot">(function(){try{var d=document.documentElement,t="";var m=(document.cookie||"").match(/(?:^|; )ncn_theme=(dark|light)/g);if(m&&m.length){t=m[m.length-1].split("=")[1]||""}if(t!=="dark"&&t!=="light"){try{t=localStorage.getItem("theme")||""}catch(e){}}if(t!=="dark"&&t!=="light"){t=(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light"}d.setAttribute("data-theme",t);if(t==="dark"){d.classList.add("dark")}else{d.classList.remove("dark")}}catch(e){}})();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="简洁导航 - 纯净无广告上网首页，收录精选中文和英文网站，分类清晰，一键直达。搜索、视频、社交、电商、AI、外卖、资讯、科技、数码等常用网站导航。">
     <meta name="keywords" content="网址导航,上网导航,简洁导航,网站导航,常用网站,netcn,上网首页">
@@ -19,9 +19,9 @@
     <meta name="twitter:description" content="收录精选中文和英文网站，分类清晰，一键直达。">
     <title>简洁导航 - 纯净无广告上网首页 | netcn.org</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="shell/netcn-shell.css?v=20261111b1">
-<link rel="stylesheet" href="shell/netcn-ui.css?v=20261111b1">
-    <script src="shell/shell.js?v=20261111b1"></script>
+    <link rel="stylesheet" href="shell/netcn-shell.css?v=20261111b3">
+<link rel="stylesheet" href="shell/netcn-ui.css?v=20261111b3">
+    <script src="shell/shell.js?v=20261111b3"></script>
     <link rel="icon" href="favicon.ico" sizes="16x16 24x24 32x32 48x48">
     <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">

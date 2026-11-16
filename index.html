@@ -68,7 +68,7 @@
         </div>
         <div class="nc-daily" id="ncDaily">
             <span class="nc-daily-date" id="ncDailyDate"></span>
-            <span class="nc-daily-wx" id="ncDailyWx" hidden></span>
+            <a class="nc-daily-wx" id="ncDailyWx" href="https://sky.netcn.org/" hidden></a>
         </div>
         <div class="nc-search has-icon">
             <span class="search-icon">⌕</span>
@@ -369,6 +369,8 @@ R();
       wxEl.textContent=(w.city?w.city+' ':'')+Math.round(w.temp)+'°C'+(t?' '+t:'');
     }
     wxEl.hidden=false;
+    wxEl.setAttribute('aria-label',l==='zh'?'打开火烧云 · 晚霞、朝霞、星空观测':'Open SkyNow · sunset, dawn and stargazing');
+    wxEl.title=wxEl.getAttribute('aria-label');
   }
 
   function geo(l,cb){

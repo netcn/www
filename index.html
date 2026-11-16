@@ -66,6 +66,10 @@
             <a href="https://quiz.netcn.org/" data-nc-to="quiz">头脑体操</a>
             <a href="https://game.netcn.org/" data-nc-to="game">游戏厅</a><a href="https://sky.netcn.org/" data-nc-to="sky">火烧云</a>
         </div>
+        <div class="nc-daily" id="ncDaily">
+            <span class="nc-daily-date" id="ncDailyDate"></span>
+            <span class="nc-daily-wx" id="ncDailyWx" hidden></span>
+        </div>
         <div class="nc-search has-icon">
             <span class="search-icon">⌕</span>
             <input type="text" id="searchInput" data-zh="搜索站点..." data-en="Search sites..." placeholder="搜索站点..." autocomplete="off">
@@ -258,6 +262,166 @@ function doSearch(){
 document.addEventListener('ncn:lang',function(e){cur=e.detail.lang;R();});
 S.addEventListener('input',doSearch);
 R();
+})();
+</script>
+<script>
+/* 顶部日期 / 天气（2026-11-16）
+   日期：纯本地计算，0 请求。
+   天气：免密钥公开接口（IP 定位 + Open-Meteo），异步、带缓存、失败静默。 */
+(function(){
+  var dateEl=document.getElementById('ncDailyDate');
+  var wxEl=document.getElementById('ncDailyWx');
+  if(!dateEl||!wxEl)return;
+
+  var GEO_TTL=86400000;   /* 定位缓存 24h */
+  var WX_TTL=1800000;     /* 天气缓存 30min */
+  var MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var WMO={
+    0:['晴','Clear'],1:['晴间多云','Mostly clear'],2:['多云','Partly cloudy'],3:['阴','Overcast'],
+    45:['雾','Fog'],48:['雾凇','Rime fog'],
+    51:['毛毛雨','Light drizzle'],53:['毛毛雨','Drizzle'],55:['毛毛雨','Dense drizzle'],
+    56:['冻毛毛雨','Freezing drizzle'],57:['冻毛毛雨','Freezing drizzle'],
+    61:['小雨','Light rain'],63:['中雨','Rain'],65:['大雨','Heavy rain'],
+    66:['冻雨','Freezing rain'],67:['冻雨','Freezing rain'],
+    71:['小雪','Light snow'],73:['中雪','Snow'],75:['大雪','Heavy snow'],77:['雪粒','Snow grains'],
+    80:['阵雨','Rain showers'],81:['阵雨','Rain showers'],82:['强阵雨','Violent showers'],
+    85:['阵雪','Snow showers'],86:['阵雪','Snow showers'],
+    95:['雷阵雨','Thunderstorm'],96:['雷暴冰雹','Thunderstorm hail'],99:['雷暴冰雹','Thunderstorm hail']
+  };
+  var busy=false,lastWx=null;
+  function narrow(){
+    if(!window.matchMedia)return false;
+    if(lang()==='en')return matchMedia('(max-width:1100px)').matches;
+    return matchMedia('(max-width:540px)').matches;
+  }
+  /* 极窄时只留温度：中文 ≤360，英文 769–860（导航胶囊最挤的一档） */
+  function tempOnly(){
+    if(!window.matchMedia)return false;
+    if(matchMedia('(max-width:360px)').matches)return true;
+    return lang()==='en'&&matchMedia('(max-width:860px)').matches&&!matchMedia('(max-width:768px)').matches;
+  }
+  var CN_CITY={Shanghai:'上海',Beijing:'北京',Guangzhou:'广州',Shenzhen:'深圳',Hangzhou:'杭州',
+    Nanjing:'南京',Suzhou:'苏州',Chengdu:'成都',Chongqing:'重庆',Wuhan:'武汉',"Xi'an":'西安',
+    Tianjin:'天津',Qingdao:'青岛',Dalian:'大连',Shenyang:'沈阳',Harbin:'哈尔滨',Changchun:'长春',
+    Jinan:'济南',Zhengzhou:'郑州',Changsha:'长沙',Nanchang:'南昌',Fuzhou:'福州',Xiamen:'厦门',
+    Kunming:'昆明',Guiyang:'贵阳',Nanning:'南宁',Haikou:'海口',Sanya:'三亚',Lanzhou:'兰州',
+    Xining:'西宁',Yinchuan:'银川',Urumqi:'乌鲁木齐',Lhasa:'拉萨',Hohhot:'呼和浩特',
+    Shijiazhuang:'石家庄',Taiyuan:'太原',Hefei:'合肥',Ningbo:'宁波',Wuxi:'无锡',Wenzhou:'温州',
+    Dongguan:'东莞',Foshan:'佛山',Zhuhai:'珠海',Macau:'澳门','Hong Kong':'香港',Taipei:'台北',
+    'Mong Kok':'旺角',Kowloon:'九龙','Tsim Sha Tsui':'尖沙咀',Central:'中环','Causeway Bay':'铜锣湾',
+    'Sha Tin':'沙田','Tsuen Wan':'荃湾','Yuen Long':'元朗','Kwun Tong':'观塘','Wan Chai':'湾仔',
+    'Tai Po':'大埔','Aberdeen':'香港仔',Taipa:'氹仔'};
+
+  function lang(){
+    try{var l=localStorage.getItem('lang');if(l==='zh'||l==='en')return l;}catch(e){}
+    return (document.documentElement.getAttribute('lang')||'').toLowerCase().indexOf('zh')===0?'zh':'en';
+  }
+  function load(k){try{return JSON.parse(localStorage.getItem(k)||'null');}catch(e){return null;}}
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+
+  function fetchJSON(u,ms,cb){
+    var done=false,ctrl=null,tm;
+    try{if(window.AbortController)ctrl=new AbortController();}catch(e){}
+    tm=setTimeout(function(){done=true;if(ctrl){try{ctrl.abort();}catch(e){}}},ms);
+    if(!window.fetch){done=true;clearTimeout(tm);cb(null);return;}
+    fetch(u,{signal:ctrl?ctrl.signal:undefined,credentials:'omit',cache:'no-store'})
+      .then(function(r){return r&&r.ok?r.json():null;})
+      .then(function(d){if(done)return;done=true;clearTimeout(tm);cb(d);})
+      .catch(function(){if(done)return;done=true;clearTimeout(tm);cb(null);});
+  }
+
+  function renderDate(){
+    var n=new Date(),l=lang(),wk='周'+'日一二三四五六'.charAt(n.getDay());
+    if(l==='zh'){
+      dateEl.textContent=narrow()?((n.getMonth()+1)+'/'+n.getDate()+' '+wk):
+        ((n.getMonth()+1)+'月'+n.getDate()+'日 '+wk);
+    }else{
+      dateEl.textContent=narrow()?((n.getMonth()+1)+'/'+n.getDate()+' '+WD[n.getDay()]):
+        (MN[n.getMonth()]+' '+n.getDate()+', '+WD[n.getDay()]);
+    }
+  }
+
+  function wxText(code,l){
+    var m=WMO[code];
+    return m?(l==='zh'?m[0]:m[1]):'';
+  }
+  /* 顶栏窄屏用的短天气：英文去掉强度前缀，避免把搜索框挤没 */
+  function wxShortText(code,l){
+    var m=WMO[code];if(!m)return '';
+    if(l==='zh')return m[0];
+    var s=m[1].replace(/^(Light|Slight|Moderate|Mostly|Partly|Dense|Heavy|Violent|Freezing) /,'')
+      .replace(/rain showers/i,'Showers').replace(/snow showers/i,'Snow flurries')
+      .replace(/thunderstorm.*hail/i,'Storm hail');
+    return s.charAt(0).toUpperCase()+s.slice(1);
+  }
+
+  function renderWx(w){
+    if(!w||typeof w.temp!=='number')return;
+    lastWx=w;
+    var l=lang(),t=wxText(w.code,l);
+    if(tempOnly()){
+      wxEl.textContent=Math.round(w.temp)+'°';
+    }else if(narrow()){
+      var st=wxShortText(w.code,l);
+      wxEl.textContent=Math.round(w.temp)+'°'+(st?' '+st:'');
+    }else{
+      wxEl.textContent=(w.city?w.city+' ':'')+Math.round(w.temp)+'°C'+(t?' '+t:'');
+    }
+    wxEl.hidden=false;
+  }
+
+  function geo(l,cb){
+    var k='nc_geo_'+l,c=load(k);
+    if(c&&typeof c.lat==='number'&&Date.now()-c.t<GEO_TTL){cb(c);return;}
+    function done(g){if(g)save(k,g);cb(g);}
+    fetchJSON('https://ipwho.is/'+(l==='zh'?'?lang=zh-CN':''),7000,function(d){
+      if(d&&d.success!==false&&typeof d.latitude==='number'){
+        done({t:Date.now(),lat:d.latitude,lon:d.longitude,city:d.city||d.region||''});return;
+      }
+      /* 备用定位：ipwho 被限流时走 ip.sb */
+      fetchJSON('https://api.ip.sb/geoip',7000,function(e){
+        if(!e||typeof e.latitude!=='number'){done(null);return;}
+        var city=e.city||e.region||'';
+        if(l==='zh')city=CN_CITY[city]||city;
+        done({t:Date.now(),lat:e.latitude,lon:e.longitude,city:city});
+      });
+    });
+  }
+
+  function initWx(){
+    if(busy)return;
+    var l=lang(),c=load('nc_wx_'+l);
+    if(c&&typeof c.temp==='number'&&Date.now()-c.t<WX_TTL){renderWx(c);return;}
+    busy=true;
+    geo(l,function(g){
+      if(!g){busy=false;return;}
+      var u='https://api.open-meteo.com/v1/forecast?latitude='+g.lat+'&longitude='+g.lon+
+            '&current=temperature_2m,weather_code&timezone=auto';
+      fetchJSON(u,9000,function(d){
+        busy=false;
+        if(!d||!d.current||typeof d.current.temperature_2m!=='number')return;
+        var w={t:Date.now(),city:g.city,temp:d.current.temperature_2m,code:d.current.weather_code};
+        save('nc_wx_'+l,w);
+        if(lang()===l)renderWx(w);
+      });
+    });
+  }
+
+  function refresh(){
+    renderDate();
+    var l=lang(),c=load('nc_wx_'+l);
+    if(c&&typeof c.temp==='number'&&Date.now()-c.t<WX_TTL){renderWx(c);}
+    else{wxEl.hidden=true;wxEl.textContent='';lastWx=null;busy=false;initWx();}
+  }
+
+  renderDate();
+  setInterval(renderDate,60000);
+  var rz;
+  window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){renderDate();if(lastWx)renderWx(lastWx);},120);});
+  if(document.readyState==='complete')setTimeout(initWx,0);
+  else window.addEventListener('load',function(){setTimeout(initWx,0);});
+  document.addEventListener('ncn:lang',refresh);
 })();
 </script>
 </body>

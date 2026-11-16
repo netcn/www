@@ -56,14 +56,14 @@
       footNote: '© 2011–2026 netcn.org',
       footSite: {
         nav: '900+ 站点 · 纯净无广告',
-        ask: '17,305 题 · <a href="https://ask.netcn.org/trust/">来源可信度报告</a> · CC BY 4.0 署名 问答 ask.netcn.org',
-        quiz: '3,193 题 · 脑筋急转弯 / 字谜 / 谜语 / 智力测试',
+        ask: '13,925 题 · <a href="https://ask.netcn.org/trust/">来源可信度报告</a> · CC BY 4.0 署名 问答 ask.netcn.org',
+        quiz: '1,113 题 · 脑筋急转弯 / 字谜 / 谜语 / 智力测试',
         game: '53 款游戏 · 打开即玩 · 纪录仅存本地',
         sky: '晚霞 · 朝霞 · 星空 · 月亮 · 流星雨 数据仅供参考'
       },
       title: {
         nav: '简洁导航 - 纯净无广告上网首页 | netcn.org',
-        ask: '问答 · 科学冒险百科 · Ask · Science Q&A Encyclopedia',
+        ask: '科学问答 · 好奇心有答案 | ask.netcn.org',
         quiz: '头脑体操 - 脑筋急转弯·猜字谜·猜谜语·智力测试',
         game: '游戏厅 · 53 款游戏 | netcn.org',
         sky: '火烧云 · 今晚晚霞、朝霞、星空、月亮观测指南'
@@ -85,14 +85,14 @@
       footNote: '© 2011–2026 netcn.org',
       footSite: {
         nav: '900+ sites · ad-free',
-        ask: '17,305 questions · <a href="https://ask.netcn.org/trust/">Source credibility</a> · CC BY 4.0 · ask.netcn.org',
-        quiz: '3,193 Chinese wordplay puzzles · English UI, original Chinese questions',
+        ask: '13,925 questions · <a href="https://ask.netcn.org/trust/">Source credibility</a> · CC BY 4.0 · ask.netcn.org',
+        quiz: '1,113 Chinese wordplay puzzles · English UI, original Chinese questions',
         game: '53 games · play instantly · high scores stay local',
         sky: 'Sunset, sunrise, stars, moon & meteors · for reference only'
       },
       title: {
         nav: 'Simple Nav - A clean, ad-free start page | netcn.org',
-        ask: 'Science Q&A · 17,305 verified questions | ask.netcn.org',
+        ask: 'Science Q&A · 13,925 real questions, each with a source | ask.netcn.org',
         quiz: 'Brain Teasers · Chinese wordplay & IQ puzzles | quiz.netcn.org',
         game: 'Arcade · 53 games, play instantly | game.netcn.org',
         sky: "Sky Watch · Tonight's sunset, stars & moon outlook | sky.netcn.org"

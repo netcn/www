@@ -7,17 +7,20 @@ window.sitesData = {
       {name:"360搜",url:"https://www.so.com/"},
       {name:"谷歌",url:"https://www.google.cn/"},
       {name:"神马",url:"https://www.sm.cn/"},
-      {name:"搜搜",url:"https://www.soso.com/"}
+      {name:"夸克",url:"https://quark.cn/"},
+      {name:"DuckDuckGo",url:"https://duckduckgo.com/"},
+      {name:"Ecosia",url:"https://www.ecosia.org/"}
     ],
     "智能": [
       {name:"推演",url:"https://specul.com/"},
       {name:"DeepSeek",url:"https://www.deepseek.com/"},
       {name:"豆包",url:"https://www.doubao.com/"},
+      {name:"腾讯元宝",url:"https://yuanbao.tencent.com/"},
       {name:"Qwen",url:"https://chat.qwen.ai/"},
-      {name:"千问",url:"https://www.qianwen.com/"},	  
+      {name:"千问",url:"https://www.qianwen.com/"},
       {name:"Kimi",url:"https://www.kimi.com/"},
-      {name:"清言",url:"https://chatglm.cn/"},	  
-      {name:"文心",url:"https://chat.baidu.com/"},	  
+      {name:"清言",url:"https://chatglm.cn/"},
+      {name:"文心",url:"https://chat.baidu.com/"},
       {name:"ChatGPT",url:"https://chat.openai.com/"},
       {name:"Claude",url:"https://claude.ai/"},
       {name:"Gemini",url:"https://gemini.google.com/"}
@@ -36,8 +39,10 @@ window.sitesData = {
     ],
     "社交": [
       {name:"微信",url:"https://weixin.qq.com/"},
+      {name:"QQ",url:"https://im.qq.com/"},
       {name:"微博",url:"https://weibo.com/"},
-      {name:"小红书",url:"https://www.xiaohongshu.com/"}
+      {name:"小红书",url:"https://www.xiaohongshu.com/"},
+      {name:"脉脉",url:"https://maimai.cn/"}
     ],
     "电商": [
       {name:"淘宝",url:"https://www.taobao.com/"},
@@ -53,10 +58,16 @@ window.sitesData = {
     "出行": [
       {name:"高德地图",url:"https://www.amap.com/"},
       {name:"百度地图",url:"https://map.baidu.com/"},
+      {name:"腾讯地图",url:"https://map.qq.com/"},
       {name:"12306",url:"https://www.12306.cn/"},
       {name:"公交",url:"https://www.8684.cn/"},
       {name:"天气",url:"https://www.weather.com.cn/"},
-      {name:"大众点评",url:"https://www.dianping.com/"}
+      {name:"大众点评",url:"https://www.dianping.com/"},
+      {name:"滴滴",url:"https://www.didiglobal.com/"}
+    ],
+    "外卖": [
+      {name:"美团",url:"https://www.meituan.com/"},
+      {name:"淘宝闪购",url:"https://www.ele.me/"}
     ],
     "资讯": [
       {name:"今日头条",url:"https://www.toutiao.com/"},
@@ -139,6 +150,7 @@ window.sitesData = {
     ],
     "编程": [
       {name:"GitHub",url:"https://github.com/"},
+      {name:"Gitee",url:"https://gitee.com/"},
       {name:"CSDN",url:"https://www.csdn.net/"},
       {name:"掘金",url:"https://juejin.cn/"},
       {name:"开源中国",url:"https://www.oschina.net/"},
@@ -167,7 +179,8 @@ window.sitesData = {
       {name:"酷我",url:"https://www.kuwo.cn/"},
       {name:"咪咕音乐",url:"https://music.migu.cn/"},
       {name:"MIDI音乐",url:"https://midicn.com/"},
-      {name:"音乐人",url:"https://midi.cn/"}
+      {name:"音乐人",url:"https://midi.cn/"},
+      {name:"Spotify",url:"https://www.spotify.com/"}
     ],
     "论坛": [
       {name:"知乎",url:"https://www.zhihu.com/"},
@@ -175,13 +188,11 @@ window.sitesData = {
       {name:"豆瓣",url:"https://www.douban.com/"},
       {name:"虎扑",url:"https://www.hupu.com/"},
       {name:"简书",url:"https://www.jianshu.com/"},
-      {name:"天涯",url:"https://www.tianya.cn/"},
       {name:"即刻",url:"https://www.okjike.com/"},
       {name:"皮皮虾",url:"https://www.pipix.com/"},
       {name:"最右",url:"https://www.izuiyou.com/"},
-      {name:"人人",url:"https://www.renren.com/"},
       {name:"LOFTER",url:"https://www.lofter.com/"},
-      {name:"悟空问答",url:"https://www.wukong.com/"}
+      {name:"NGA",url:"https://bbs.nga.cn/"}
     ],
     "游戏": [
       {name:"Steam",url:"https://store.steampowered.com/"},
@@ -204,7 +215,9 @@ window.sitesData = {
       {name:"逗游",url:"https://www.doyo.cn/"},
       {name:"52pk",url:"https://www.52pk.com/"},
       {name:"178",url:"https://www.178.com/"},
-      {name:"游迅",url:"https://www.yxdown.com/"}
+      {name:"游迅",url:"https://www.yxdown.com/"},
+      {name:"机核",url:"https://www.gcores.com/"},
+      {name:"游研社",url:"https://www.yystv.cn/"}
     ],
     "直播": [
       {name:"斗鱼",url:"https://www.douyu.com/"},
@@ -231,6 +244,7 @@ window.sitesData = {
       {name:"央视影音",url:"https://app.cctv.com/"}
     ],
     "播客": [
+      {name:"小宇宙",url:"https://www.xiaoyuzhoufm.com/"},
       {name:"喜马拉雅",url:"https://www.ximalaya.com/"},
       {name:"蜻蜓FM",url:"https://www.qingting.fm/"},
       {name:"荔枝FM",url:"https://www.lizhi.fm/"},
@@ -256,7 +270,8 @@ window.sitesData = {
       {name:"网易云阅读",url:"https://yuedu.163.com/"},
       {name:"实录",url:"https://shilu.org/"},
       {name:"尺度",url:"https://chidu.org/"},
-      {name:"孔夫子旧书网",url:"https://www.kongfz.com/"}
+      {name:"孔夫子旧书网",url:"https://www.kongfz.com/"},
+      {name:"七猫",url:"https://www.qimao.com/"}
     ],
     "百科": [
       {name:"百度百科",url:"https://baike.baidu.com/"},
@@ -265,10 +280,12 @@ window.sitesData = {
       {name:"海词",url:"https://dict.cn/"},
       {name:"大英百科",url:"https://www.britannica.com/"},
       {name:"汉典",url:"https://www.zdic.net/"},
+      {name:"有道",url:"https://www.youdao.com/"},
       {name:"韦氏词典",url:"https://www.merriam-webster.com/"},
       {name:"互联网档案馆",url:"https://archive.org/"},
       {name:"可汗学院",url:"https://www.khanacademy.org/"},
-      {name:"Dictionary",url:"https://www.dictionary.com/"}
+      {name:"Dictionary",url:"https://www.dictionary.com/"},
+      {name:"萌娘百科",url:"https://zh.moegirl.org.cn/"}
     ],
     "工具": [
       {name:"VS Code",url:"https://code.visualstudio.com/"},
@@ -302,7 +319,7 @@ window.sitesData = {
       {name:"华为云",url:"https://www.huaweicloud.com/"},
       {name:"蓝奏云",url:"https://www.lanzou.com/"},
       {name:"123云盘",url:"https://www.123pan.com/"},
-      {name:"又拍",url:"https://x.yupoo.com/"}
+      {name:"又拍云",url:"https://www.upyun.com/"}
     ],
     "网盘": [
       {name:"百度网盘",url:"https://pan.baidu.com/"},
@@ -312,7 +329,8 @@ window.sitesData = {
       {name:"石墨文档",url:"https://shimo.im/"},
       {name:"115",url:"https://www.115.com/"},
       {name:"幕布",url:"https://mubu.com/"},
-      {name:"ProcessOn",url:"https://www.processon.com/"}
+      {name:"ProcessOn",url:"https://www.processon.com/"},
+      {name:"天翼云盘",url:"https://cloud.189.cn/"}
     ],
     "办公": [
       {name:"钉钉",url:"https://www.dingtalk.com/"},
@@ -322,10 +340,14 @@ window.sitesData = {
       {name:"Skype",url:"https://www.skype.com/"}
     ],
     "笔记": [
-      {name:"有道",url:"https://www.youdao.com/"},
       {name:"印象笔记",url:"https://www.yinxiang.com/"},
+      {name:"语雀",url:"https://www.yuque.com/"},
+      {name:"flomo",url:"https://flomoapp.com/"}
+    ],
+    "翻译": [
       {name:"有道翻译",url:"https://fanyi.youdao.com/"},
-      {name:"DeepL",url:"https://www.deepl.com/"}
+      {name:"DeepL",url:"https://www.deepl.com/"},
+      {name:"百度翻译",url:"https://fanyi.baidu.com/"}
     ],
     "邮箱": [
       {name:"QQ邮箱",url:"https://mail.qq.com/"},
@@ -334,7 +356,7 @@ window.sitesData = {
       {name:"Outlook",url:"https://outlook.live.com/"},
       {name:"Gmail",url:"https://mail.google.com/"},
       {name:"新浪邮箱",url:"https://mail.sina.com.cn/"},
-      {name:"企业邮箱",url:"https://www.exmail.qq.com/"}
+      {name:"企业邮箱",url:"https://exmail.qq.com/"}
     ],
     "金融": [
       {name:"支付宝",url:"https://www.alipay.com/"},
@@ -351,7 +373,8 @@ window.sitesData = {
       {name:"金十数据",url:"https://www.jin10.com/"},
       {name:"金融界",url:"https://www.jrj.com.cn/"},
       {name:"证券之星",url:"https://www.stockstar.com/"},
-      {name:"中财网",url:"https://www.cfi.net.cn/"}
+      {name:"中财网",url:"https://www.cfi.net.cn/"},
+      {name:"巨潮资讯",url:"https://www.cninfo.com.cn/"}
     ],
     "投资": [
       {name:"天天基金",url:"https://www.1234567.com.cn/"},
@@ -396,6 +419,7 @@ window.sitesData = {
       {name:"一嗨租车",url:"https://www.1hai.cn/"}
     ],
     "航空": [
+      {name:"航旅纵横",url:"https://www.umetrip.com/"},
       {name:"南方航空",url:"https://www.csair.com/"},
       {name:"东方航空",url:"https://www.ceair.com/"},
       {name:"中国国航",url:"https://www.airchina.com.cn/"},
@@ -433,7 +457,8 @@ window.sitesData = {
       {name:"申通",url:"https://www.sto.cn/"},
       {name:"极兔",url:"https://www.jtexpress.com/"},
       {name:"快递100",url:"https://www.kuaidi100.com/"},
-      {name:"联邦快递",url:"https://www.fedex.com/"}
+      {name:"联邦快递",url:"https://www.fedex.com/"},
+      {name:"德邦",url:"https://www.deppon.com/"}
     ],
     "物流": [
       {name:"货拉拉",url:"https://www.huolala.cn/"},
@@ -453,7 +478,6 @@ window.sitesData = {
     ],
     "生活": [
       {name:"58同城",url:"https://www.58.com/"},
-      {name:"赶集",url:"https://www.ganji.com/"},
       {name:"本地宝",url:"https://www.bendibao.com/"},
       {name:"大麦",url:"https://www.damai.cn/"},
       {name:"百姓",url:"https://www.baixing.com/"},
@@ -461,6 +485,8 @@ window.sitesData = {
       {name:"妈妈",url:"https://www.mama.cn/"},
       {name:"天鹅到家",url:"https://www.daojia.com/"},
       {name:"宜家",url:"https://www.ikea.cn/cn/zh/"},
+      {name:"盒马",url:"https://www.freshippo.com/"},
+      {name:"叮咚买菜",url:"https://www.100.me/"},
       {name:"Keep",url:"https://www.gotokeep.com/"}
     ],
     "美食": [
@@ -468,7 +494,6 @@ window.sitesData = {
       {name:"美食天下",url:"https://www.meishichina.com/"},
       {name:"美食杰",url:"https://www.meishij.net/"},
       {name:"豆果",url:"https://www.douguo.com/"},
-      {name:"好豆",url:"https://www.haodou.com/"},
       {name:"香哈",url:"https://www.xiangha.com/"},
       {name:"茶谱",url:"https://chapu.org/"},
       {name:"喝酒",url:"https://hejiu.org/"},
@@ -490,32 +515,30 @@ window.sitesData = {
       {name:"阿里健康",url:"https://www.alihealth.com/"},
       {name:"丁香园",url:"https://www.dxy.cn/"},
       {name:"医脉通",url:"https://www.medlive.cn/"},
-      {name:"中国医药网",url:"https://www.pharmnet.com.cn/"}
+      {name:"中国医药网",url:"https://www.pharmnet.com.cn/"},
+      {name:"京东健康",url:"https://healthjd.com/"}
     ],
     "二手": [
       {name:"闲鱼",url:"https://www.goofish.com/"},
       {name:"转转",url:"https://www.zhuanzhuan.com/"},
       {name:"爱回收",url:"https://www.aihuishou.com/"},
       {name:"返利",url:"https://www.fanli.com/"},
-      {name:"一淘",url:"https://www.etao.com/"}
+      {name:"一淘",url:"https://www.etao.com/"},
+      {name:"多抓鱼",url:"https://www.duozhuayu.com/"}
     ],
     "折扣": [
       {name:"唯品会",url:"https://www.vip.com/"},
       {name:"网易严选",url:"https://you.163.com/"},
-      {name:"蘑菇街",url:"https://www.mogu.com/"},
       {name:"有品",url:"https://www.xiaomiyoupin.com/"},
       {name:"国美",url:"https://www.gome.com.cn/"},
       {name:"微店",url:"https://www.weidian.com/"}
     ],
     "海淘": [
-      {name:"亚马逊",url:"https://www.amazon.cn/"},
       {name:"AliExpress",url:"https://www.aliexpress.com/"},
-      {name:"Spotify",url:"https://www.spotify.com/"},
-      {name:"DuckDuckGo",url:"https://duckduckgo.com/"},
-      {name:"Ecosia",url:"https://www.ecosia.org/"}
+      {name:"天猫国际",url:"https://www.tmall.hk/"},
+      {name:"京东国际",url:"https://www.jd.hk/"}
     ],
     "百度": [
-      {name:"百度翻译",url:"https://fanyi.baidu.com/"},
       {name:"百度文库",url:"https://wenku.baidu.com/"},
       {name:"百家号",url:"https://baijiahao.baidu.com/"},
       {name:"百度智能云",url:"https://cloud.baidu.com/"}
@@ -546,7 +569,9 @@ window.sitesData = {
       {name:"OPPO",url:"https://www.oppo.com/"},
       {name:"vivo",url:"https://www.vivo.com/"},
       {name:"Apple",url:"https://www.apple.com.cn/"},
-      {name:"三星",url:"https://www.samsung.com/cn/"}
+      {name:"三星",url:"https://www.samsung.com/cn/"},
+      {name:"荣耀",url:"https://www.honor.com/cn/"},
+      {name:"一加",url:"https://www.oneplus.com/cn"}
     ],
     "系统": [
       {name:"微软",url:"https://www.microsoft.com/"},
@@ -560,7 +585,8 @@ window.sitesData = {
       {name:"格式工厂",url:"https://www.pcfreetime.com/"},
       {name:"比特彗星",url:"https://www.bitcomet.com/"},
       {name:"草料二维码",url:"https://cli.im/"},
-      {name:"APKPure",url:"https://apkpure.com/"}
+      {name:"APKPure",url:"https://apkpure.com/"},
+      {name:"火绒",url:"https://www.huorong.cn/"}
     ],
     "教育": [
       {name:"学信",url:"https://www.chsi.com.cn/"},
@@ -575,7 +601,6 @@ window.sitesData = {
       {name:"猿辅导",url:"https://www.yuanfudao.com/"},
       {name:"学而思",url:"https://www.xueersi.com/"},
       {name:"高途",url:"https://www.gaotu.cn/"},
-      {name:"腾讯课堂",url:"https://ke.qq.com/"},
       {name:"考研帮",url:"https://www.kaoyan.com/"},
       {name:"高考网",url:"https://www.gaokao.com/"}
     ],
@@ -600,6 +625,7 @@ window.sitesData = {
     ],
     "政府": [
       {name:"中国政府网",url:"https://www.gov.cn/"},
+      {name:"交管12123",url:"https://gab.122.gov.cn/"},
       {name:"国家税务总局",url:"https://www.chinatax.gov.cn/"},
       {name:"国家企业信用",url:"https://www.gsxt.gov.cn/"},
       {name:"教育部",url:"https://www.moe.gov.cn/"},
@@ -663,7 +689,8 @@ window.sitesData = {
       {name:"Gemini",url:"https://gemini.google.com/"},
       {name:"Perplexity",url:"https://www.perplexity.ai/"},
       {name:"Grok",url:"https://grok.com/"},
-      {name:"Poe",url:"https://poe.com/"}
+      {name:"Poe",url:"https://poe.com/"},
+      {name:"Copilot",url:"https://copilot.microsoft.com/"}
     ],
     "Stream": [
       {name:"Netflix",url:"https://www.netflix.com/"},
@@ -716,7 +743,6 @@ window.sitesData = {
       {name:"LA Times",url:"https://www.latimes.com/"},
       {name:"Associated Press",url:"https://apnews.com/"},
       {name:"Time",url:"https://time.com/"},
-      {name:"Insider",url:"https://www.insider.com/"},
       {name:"New York Post",url:"https://nypost.com/"},
       {name:"Al Jazeera",url:"https://www.aljazeera.com/"},
       {name:"The Atlantic",url:"https://www.theatlantic.com/"},
@@ -794,9 +820,6 @@ window.sitesData = {
       {name:"Polygon",url:"https://www.polygon.com/"},
       {name:"Kotaku",url:"https://kotaku.com/"},
       {name:"MyAnimeList",url:"https://myanimelist.net/"},
-      {name:"Bored Panda",url:"https://www.boredpanda.com/"},
-      {name:"Cricbuzz",url:"https://www.cricbuzz.com/"},
-      {name:"GDNet",url:"https://www.gdnet.com/"},
       {name:"Steam Community",url:"https://steamcommunity.com/"}
     ],
     "Movie": [
@@ -816,7 +839,8 @@ window.sitesData = {
       {name:"Bleacher Report",url:"https://bleacherreport.com/"},
       {name:"UFC",url:"https://www.ufc.com/"},
       {name:"ESPN+",url:"https://plus.espn.com/"},
-      {name:"DAZN",url:"https://www.dazn.com/"}
+      {name:"DAZN",url:"https://www.dazn.com/"},
+      {name:"Cricbuzz",url:"https://www.cricbuzz.com/"}
     ],
     "Finance": [
       {name:"Yahoo Finance",url:"https://finance.yahoo.com/"},
@@ -826,7 +850,10 @@ window.sitesData = {
       {name:"MarketWatch",url:"https://www.marketwatch.com/"},
       {name:"Financial Times",url:"https://www.ft.com/"},
       {name:"The Economist",url:"https://www.economist.com/"},
-      {name:"Seeking Alpha",url:"https://seekingalpha.com/"}
+      {name:"Seeking Alpha",url:"https://seekingalpha.com/"},
+      {name:"Nasdaq",url:"https://www.nasdaq.com/"},
+      {name:"SEC",url:"https://www.sec.gov/"},
+      {name:"FRED",url:"https://fred.stlouisfed.org/"}
     ],
     "Banks": [
       {name:"Chase",url:"https://www.chase.com/"},
@@ -931,7 +958,8 @@ window.sitesData = {
       {name:"CVS",url:"https://www.cvs.com/"},
       {name:"Walgreens",url:"https://www.walgreens.com/"},
       {name:"Petfinder",url:"https://www.petfinder.com/"},
-      {name:"Yellow Pages",url:"https://www.yellowpages.com/"}
+      {name:"Yellow Pages",url:"https://www.yellowpages.com/"},
+      {name:"Bored Panda",url:"https://www.boredpanda.com/"}
     ],
     "Fashion": [
       {name:"Nike",url:"https://www.nike.com/"},
@@ -981,6 +1009,12 @@ window.sitesData = {
       {name:"Scribd",url:"https://www.scribd.com/"},
       {name:"Thesaurus.com",url:"https://www.thesaurus.com/"},
       {name:"WolframAlpha",url:"https://www.wolframalpha.com/"}
+    ],
+    "Research": [
+      {name:"arXiv",url:"https://arxiv.org/"},
+      {name:"Nature",url:"https://www.nature.com/"},
+      {name:"PubMed",url:"https://pubmed.ncbi.nlm.nih.gov/"},
+      {name:"Kaggle",url:"https://www.kaggle.com/"}
     ],
     "PM": [
       {name:"Notion",url:"https://www.notion.so/"},
@@ -1097,7 +1131,9 @@ window.sitesData = {
       {name:"IBM",url:"https://www.ibm.com/"},
       {name:"Cisco",url:"https://www.cisco.com/"},
       {name:"Oracle",url:"https://www.oracle.com/"},
-      {name:"iFixit",url:"https://www.ifixit.com/"}
+      {name:"iFixit",url:"https://www.ifixit.com/"},
+      {name:"Tom's Hardware",url:"https://www.tomshardware.com/"},
+      {name:"GSMArena",url:"https://www.gsmarena.com/"}
     ],
     "Hosting": [
       {name:"GoDaddy",url:"https://www.godaddy.com/"},
@@ -1153,6 +1189,7 @@ window.sitesData = {
       {name:"Uber",url:"https://www.uber.com/"},
       {name:"Lyft",url:"https://www.lyft.com/"},
       {name:"Skyscanner",url:"https://www.skyscanner.com/"},
+      {name:"Google Flights",url:"https://www.google.com/travel/flights"},
       {name:"GetYourGuide",url:"https://www.getyourguide.com/"},
       {name:"Viator",url:"https://www.viator.com/"},
       {name:"Omio",url:"https://www.omio.com/"},
@@ -1162,10 +1199,14 @@ window.sitesData = {
     ],
     "Maps": [
       {name:"Google Maps",url:"https://maps.google.com/"},
-      {name:"Waze",url:"https://www.waze.com/"}
+      {name:"Waze",url:"https://www.waze.com/"},
+      {name:"Apple Maps",url:"https://maps.apple.com/"},
+      {name:"OpenStreetMap",url:"https://www.openstreetmap.org/"}
     ],
     "Weather": [
-      {name:"AccuWeather",url:"https://www.accuweather.com/"}
+      {name:"AccuWeather",url:"https://www.accuweather.com/"},
+      {name:"Weather.com",url:"https://weather.com/"},
+      {name:"NWS",url:"https://www.weather.gov/"}
     ],
     "Ship": [
       {name:"DHL",url:"https://www.dhl.com/"},
@@ -1200,8 +1241,7 @@ window.sitesData = {
       {name:"Credit Karma",url:"https://www.creditkarma.com/"},
       {name:"TradingView",url:"https://www.tradingview.com/"},
       {name:"NerdWallet",url:"https://www.nerdwallet.com/"},
-      {name:"Morningstar",url:"https://www.morningstar.com/"},
-      {name:"Mint",url:"https://mint.intuit.com/"}
+      {name:"Morningstar",url:"https://www.morningstar.com/"}
     ]
   }
 };

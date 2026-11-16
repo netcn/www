@@ -53,6 +53,54 @@ a:hover { color: var(--color-link-hover); }
 
 .container { max-width: 100%; margin: 0 auto; padding: 0 8px; }
 
+/* ---- 顶栏内嵌日期 / 天气（仅导航首页，2026-11-16） ---- */
+.nc-shell .nc-daily {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  margin-left: 2px;
+  padding-left: 9px;
+  border-left: 1px solid var(--color-border-light);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+.nc-daily-date { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nc-daily-wx {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 顶栏单行：桌面端禁止换行，靠搜索框收缩让位；窄屏搜索继续缩 */
+@media (min-width: 769px) {
+  .nc-shell.nc-shell { flex-wrap: nowrap; }
+}
+@media (min-width: 769px) and (max-width: 980px) {
+  .nc-shell .nc-sw a { padding: 0 7px; font-size: 11.5px; }
+}
+@media (min-width: 769px) and (max-width: 860px) {
+  .nc-shell .nc-sw a { padding: 0 5px; font-size: 10.5px; }
+  html[lang="en"] .nc-shell .nc-sw a { padding: 0 4px; }
+  .nc-shell .nc-daily { font-size: 11.5px; gap: 5px; padding-left: 6px; }
+  .nc-shell .nc-search { min-width: 96px; }
+}
+@media (max-width: 540px) {
+  .nc-shell .nc-daily { font-size: 11.5px; gap: 5px; padding-left: 6px; margin-left: 0; }
+  .nc-shell .nc-search { min-width: 80px; }
+}
+@media (max-width: 430px) {
+  .nc-shell .nc-brand-txt { display: none; }
+}
+@media (max-width: 360px) {
+  .nc-shell .nc-search { min-width: 70px; }
+  .nc-shell .nc-daily { font-size: 11px; gap: 4px; }
+}
+
 /* 顶栏与页脚由 shell/netcn-shell.css 统一（.nc-shell / .nc-search / .nc-tools / .nc-foot） */
 
 @media (max-width: 480px) {

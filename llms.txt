@@ -7,14 +7,15 @@
 - 类型: 网址导航站（主站为纯导航枢纽，无广告；功能内容在独立子站）
 
 ## 主要内容
-- 首页: https://netcn.org/ - 70+中文分类 + 54+英文分类，收录900+精选网站
+- 首页: https://netcn.org/ - 70 个中文分类 + 55 个英文分类，991 条精选链接（965 个唯一站点）
 
 ## 子站
-- 头脑体操: https://quiz.netcn.org/ - 脑筋急转弯、猜字谜、猜谜语、智力测试，共 3327 题
-- 科学问答: https://ask.netcn.org/ - 科学问答 17,305 题
-- 小游戏: https://game.netcn.org/ - 53 款小游戏
+- 科学问答: https://ask.netcn.org/ - 双语科学问答百科 13,925 题，12 学科 / 14 条知识路径
+- 头脑体操: https://quiz.netcn.org/ - 脑筋急转弯、猜字谜、猜谜语、智力测试，共 1,113 题
+- 游戏厅: https://game.netcn.org/ - 53 款经典街机 / 逻辑 / 棋牌小游戏，打开即玩
+- 火烧云: https://sky.netcn.org/ - 晚霞、朝霞、星空、月亮观测指南，覆盖 518 个城市与景区
 
 ## 分类体系
-中文分类: 搜索、视频、社交、电商、智能、外卖、资讯、门户、官媒、时政、财经、科技、数码、极客、编程、社区、百科、工具、模型、平台、企业、云服、音乐、论坛、游戏、游媒、直播、影视、影音、播客、体育、阅读、网盘、办公、笔记、邮箱、金融、证券、投资、银行、保险、旅游、出行、航空、地图、汽车、房产、快递、物流、招聘、生活、美食、健康、医疗、二手、折扣、海淘、百度、设计、摄影、手机、系统、教育、课教、网课、考证、通信、政府、企查、天气
+中文分类: 搜索、智能、视频、社交、电商、出行、外卖、资讯、门户、官媒、时政、财经、科技、数码、极客、编程、户外、社区、音乐、论坛、游戏、游媒、直播、影视、影音、播客、体育、阅读、百科、工具、模型、企业、云服、网盘、办公、笔记、翻译、邮箱、金融、证券、投资、银行、保险、旅游、租车、航空、汽车、房产、快递、物流、招聘、生活、美食、健康、医疗、二手、折扣、海淘、百度、设计、摄影、手机、系统、教育、课教、网课、考证、通信、政府、企查
 
-英文分类: Search, Video, Social, Shop, AI, Stream, Chat, News, Media, Tech, Geek, Biz, Music, Forum, Games, Movie, Sports, Finance, Banks, Invest, Pay, Crypto, Health, Wellness, Travel, Food, Life, Fashion, Jobs, Learn, Wiki, PM, Storage, Office, Email, Cloud, Dev, Tools, Design, Photos, Hardware, Hosting, Models, Deals, Cars, Transit, Maps, Weather, Ship, Bus, Air, Security, Sub, Image, Recipes, Money
+英文分类: Search, Video, Social, Shop, AI, Stream, Chat, News, Media, Tech, Geek, Biz, Music, Forum, Games, Movie, Sports, Finance, Banks, Invest, Pay, Crypto, Health, Wellness, Travel, Food, Life, Fashion, Jobs, Learn, Wiki, Research, PM, Storage, Office, Email, Cloud, Dev, Tools, Design, Photos, Hardware, Hosting, Models, Deals, Cars, Transit, Maps, Weather, Ship, Bus, Air, Security, Image, Money

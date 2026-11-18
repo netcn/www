@@ -82,6 +82,15 @@ a:hover { color: var(--color-link-hover); }
 .nc-daily-wx:hover { color: var(--color-link-hover); background: var(--color-accent-bg); }
 .nc-daily-wx:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
+/* 顶栏外链只在宽屏显示；≤1199 让位给搜索框，移动端交给底部 Tab */
+@media (max-width: 1199px) {
+  .nc-shell .nc-sw a.nc-sw-ext { display: none; }
+}
+/* 英文家族名更长，1200–1279 也先收起外链，避免搜索框被压到极限 */
+@media (max-width: 1279px) {
+  html[lang="en"] .nc-shell .nc-sw a.nc-sw-ext { display: none; }
+}
+
 /* 顶栏单行：桌面端禁止换行，靠搜索框收缩让位；窄屏搜索继续缩 */
 @media (min-width: 769px) {
   .nc-shell.nc-shell { flex-wrap: nowrap; }
@@ -95,6 +104,52 @@ a:hover { color: var(--color-link-hover); }
   .nc-shell .nc-daily { font-size: 11.5px; gap: 5px; padding-left: 6px; }
   .nc-shell .nc-search { min-width: 96px; }
 }
+@media (max-width: 768px) {
+  /* 移动端页脚：版权与站点说明并排一行，避免各占一整行 */
+  body .nc-foot { flex-wrap: nowrap; gap: 4px 8px; }
+  body .nc-foot .nc-foot-site {
+    flex: 0 1 auto;
+    margin-left: auto;
+    text-align: right;
+    white-space: nowrap;
+  }
+  /* 壳层给页脚固定了 62px 高度；这里压回一行，别让版权占出多行空白 */
+  body.nc-has-tabbar > .nc-foot.nc-foot {
+    height: auto !important;
+    overflow: visible !important;
+    margin-top: 6px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+}
+
+.nc-foot-legal {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nc-foot-legal:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+@media (max-width: 360px) {
+  /* 320px 宽度下给“免责声明”留出空间，仍保持页脚一行 */
+  .nc-foot { font-size: 10px; }
+  .nc-foot-legal { font-size: 10px; }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  /* 769–1100 的页脚同时有 8 个站群链接、版权、免责声明和站点数，收紧间距避免换行 */
+  body .nc-foot { gap: 4px 7px; }
+}
+
+@media (min-width: 769px) and (max-width: 899px) {
+  /* 这一段宽度下 8 个站群链接已占满，先保留免责声明，站点数让位，避免被 53px 页脚裁切 */
+  .nc-foot-site { display: none; }
+}
+
 @media (max-width: 540px) {
   .nc-shell .nc-daily { font-size: 11.5px; gap: 5px; padding-left: 6px; margin-left: 0; }
   .nc-shell .nc-search { min-width: 80px; }

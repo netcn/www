@@ -165,10 +165,17 @@ a:hover { color: var(--color-link-hover); }
 /* 顶栏与页脚由 shell/netcn-shell.css 统一（.nc-shell / .nc-search / .nc-tools / .nc-foot） */
 
 @media (max-width: 480px) {
-  .container { padding: 0 6px; }
-  .cat-tag { font-size: 13px; padding: 1px 5px; }
-  .category-section a { font-size: 13px; padding: 2px 5px; }
-  .categories-grid { column-gap: 3px; row-gap: 3px; }
+  .container { padding: 0 7px; }
+  .cat-tag {
+    font-size: 13px; padding: 3px 6px; min-height: 28px;
+    background: rgba(13,148,136,.10); border: 1px solid rgba(13,148,136,.16);
+  }
+  .category-section { padding: 5px 6px; gap: 3px; border-radius: 8px; }
+  .category-section a {
+    font-size: 13px; padding: 3px 6px; min-height: 28px;
+    line-height: 1.35;
+  }
+  .categories-grid { column-gap: 4px; row-gap: 5px; }
 }
 
 /* ---- 全站共用视觉语言映射（2026-11-07） ---- */
